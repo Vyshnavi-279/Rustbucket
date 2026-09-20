@@ -89,7 +89,7 @@ export default function FindingsTabs({ result }) {
 
   return (
     <section className="rounded-2xl bg-white shadow">
-      <div role="tablist" aria-label="Scan findings" className="flex border-b border-slate-200">
+      <div role="tablist" aria-label="Scan findings" className="flex overflow-x-auto border-b border-slate-200">
         {TABS.map((t) => {
           const selected = t.id === activeId
           const count = (result[t.id] || []).length
@@ -102,7 +102,7 @@ export default function FindingsTabs({ result }) {
               aria-selected={selected}
               aria-controls={`panel-${t.id}`}
               onClick={() => setActiveId(t.id)}
-              className={`px-4 py-3 font-semibold focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500 ${
+              className={`shrink-0 whitespace-nowrap px-4 py-3 font-semibold focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500 ${
                 selected ? 'border-b-2 border-orange-600 text-orange-700' : 'text-slate-600 hover:text-slate-900'
               }`}
             >
