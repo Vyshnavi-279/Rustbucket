@@ -1,0 +1,18 @@
+# Environment variables and secrets
+.env
+*.env
+
+# Python virtual environment & bytecode
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# IDEs & System files
+.DS_Store
+.vscode/
+.idea/
+
+# Testing & Logs
+test_run.log
+.pytest_cache/
