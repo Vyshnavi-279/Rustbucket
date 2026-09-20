@@ -1,3 +1,4 @@
+import ResultsPage from './pages/ResultsPage'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import SubmitPage from './pages/SubmitPage'
 
@@ -20,7 +21,7 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<SubmitPage />} />
-          <Route path="/scans/:scanId" element={<h1>Results page (coming soon)</h1>} />
+          <Route path="/scans/:scanId" element={<ResultsPage />} />
           <Route path="/history" element={<h1>History (coming soon)</h1>} />
           <Route path="/history/:repoId" element={<h1>Repo history (coming soon)</h1>} />
         </Routes>
