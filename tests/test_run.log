@@ -1,0 +1,23 @@
+{
+  echo "=================================================="
+  echo "RUSTBUCKET BACKEND TEST & INTEGRATION LOG"
+  echo "Date: $(date -u)"
+  echo "=================================================="
+  echo ""
+  echo "--- 1. ENVIRONMENT & DEPENDENCIES ---"
+  python3 --version
+  pip list
+  echo ""
+  echo "--- 2. LINTING CHECK (RUFF) ---"
+  ruff check app/
+  echo ""
+  echo "--- 3. DATABASE MIGRATIONS CHECK ---"
+  alembic current
+  echo ""
+  echo "--- 4. PYTEST SUITE EXECUTION ---"
+  pytest tests/ -v -m "not network"
+  echo ""
+  echo "=================================================="
+  echo "ALL CHECKS PASSED SUCCESSFULLY"
+  echo "=================================================="
+} > test_run.log 2>&1

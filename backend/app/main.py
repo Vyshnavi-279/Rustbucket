@@ -1,3 +1,6 @@
+from typing import List
+from fastapi import FastAPI, HTTPException, Depends, status
+from sqlalchemy.orm import Session
 from fastapi import FastAPI, HTTPException, Depends, status
 from sqlalchemy.orm import Session
 from prometheus_fastapi_instrumentator import Instrumentator
