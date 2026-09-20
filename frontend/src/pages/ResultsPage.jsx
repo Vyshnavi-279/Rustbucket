@@ -1,9 +1,11 @@
+import FindingsTabs from '../components/FindingsTabs'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { getScan, submitScan } from '../api/client'
 import ScoreGauge from '../components/ScoreGauge'
 import SummaryCards from '../components/SummaryCards'
 import { formatDate, timeAgo } from '../utils/date'
+  
 
 const POLL_MS = 2000
 
@@ -108,7 +110,7 @@ function DoneView({ scan }) {
         </div>
       )}
 
-      <p className="text-slate-500">Findings tables coming in Part 2.</p>
+      <FindingsTabs result={result} />
     </div>
   )
 }
