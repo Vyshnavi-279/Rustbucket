@@ -35,7 +35,7 @@ function ProgressCard({ status, elapsed }) {
           <p className="font-semibold">
             {status === 'running' ? 'Scanning your dependencies…' : 'Waiting in the queue…'}
           </p>
-          <p className="text-sm text-slate-600">
+          <p className="mt-1 break-words text-slate-600">
             Status: {status} · Elapsed: {formatElapsed(elapsed)}
           </p>
         </div>
@@ -64,7 +64,7 @@ function FailedCard({ error, onRetry, retrying, retryError }) {
           type="button"
           onClick={onRetry}
           disabled={retrying}
-          className="rounded-lg bg-orange-600 px-4 py-2 font-semibold text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-60"
+          className="rounded-lg bg-orange-700 px-4 py-2 font-semibold text-white hover:bg-orange-800 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 disabled:opacity-60"
         >
           {retrying ? 'Retrying…' : 'Try again'}
         </button>
