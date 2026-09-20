@@ -1,0 +1,59 @@
+{
+  "SchemaVersion": 2,
+  "Results": [
+    {
+      "Target": "requirements.txt",
+      "Class": "lang-pkgs",
+      "Type": "pip",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2019-19844",
+          "PkgName": "django",
+          "InstalledVersion": "2.2.0",
+          "Severity": "HIGH",
+          "FixedVersion": "2.2.9",
+          "Title": "URLField to IPv6 validation"
+        },
+        {
+          "VulnerabilityID": "CVE-2019-3498",
+          "PkgName": "django",
+          "InstalledVersion": "2.2.0",
+          "Severity": "MEDIUM",
+          "FixedVersion": "2.1.9",
+          "Title": "Content spoofing in django"
+        },
+        {
+          "VulnerabilityID": "CVE-2021-31542",
+          "PkgName": "django",
+          "InstalledVersion": "2.2.0",
+          "Severity": "UNKNOWN",
+          "FixedVersion": "",
+          "Title": "Breaking out of the Django admin"
+        }
+      ]
+    },
+    {
+      "Target": "package-lock.json",
+      "Class": "lang-pkgs",
+      "Type": "npm",
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2021-23337",
+          "PkgName": "lodash",
+          "InstalledVersion": "4.17.15",
+          "Severity": "CRITICAL",
+          "FixedVersion": "4.17.21",
+          "Title": "Command injection in lodash template"
+        },
+        {
+          "VulnerabilityID": "CVE-2020-8203",
+          "PkgName": "lodash",
+          "InstalledVersion": "4.17.15",
+          "Severity": "MEDIUM",
+          "FixedVersion": "4.17.20",
+          "Title": "Prototype pollution in lodash"
+        }
+      ]
+    }
+  ]
+}

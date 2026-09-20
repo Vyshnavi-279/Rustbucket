@@ -1,0 +1,17 @@
+{
+  "permissive": [
+    "MIT", "MIT-0", "Apache-2.0", "Apache-1.1", "BSD-2-Clause", "BSD-3-Clause",
+    "ISC", "0BSD", "Unlicense", "CC0-1.0", "Zlib", "PSF-2.0", "Python-2.0",
+    "WTFPL", "BSD-4-Clause"
+  ],
+  "weak_copyleft": [
+    "LGPL-2.1-only", "LGPL-2.1-or-later", "LGPL-3.0-only", "LGPL-3.0-or-later",
+    "MPL-2.0", "MPL-1.1", "EPL-2.0", "EPL-1.0", "CDDL-1.0", "CDDL-1.1"
+  ],
+  "strong_copyleft": [
+    "GPL-2.0-only", "GPL-2.0-or-later", "GPL-3.0-only", "GPL-3.0-or-later"
+  ],
+  "network_copyleft": [
+    "AGPL-3.0-only", "AGPL-3.0-or-later"
+  ]
+}
