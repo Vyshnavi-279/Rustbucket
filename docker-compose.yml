@@ -1,0 +1,49 @@
+services:
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: rustbucket-postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: rustbucket
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - rustbucket-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: rustbucket-redis
+    ports:
+      - "6379:6379"
+    networks:
+      - rustbucket-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: infra/docker/backend.Dockerfile
+    container_name: rustbucket-backend
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+psycopg2://user:pass@postgres:5432/rustbucket
+      REDIS_URL: redis://redis:6379/0
+      GITHUB_TOKEN: ""
+      SCANNER_MODE: stub
+      CORS_ORIGINS: http://localhost:5173,http://localhost:8080
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - rustbucket-network
+
+volumes:
+  postgres_data:
+
+networks:
+  rustbucket-network:
+    driver: bridge
