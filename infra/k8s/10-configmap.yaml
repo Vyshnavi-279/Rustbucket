@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rustbucket-config
+  namespace: rustbucket
+data:
+  REDIS_URL: redis://redis:6379/0
+  SCANNER_MODE: stub
+  CORS_ORIGINS: http://localhost:30080

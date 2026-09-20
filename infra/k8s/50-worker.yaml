@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  namespace: rustbucket
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+        - name: worker
+          image: ghcr.io/<owner>/rustbucket-worker:latest
+          envFrom:
+            - configMapRef:
+                name: rustbucket-config
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: rustbucket-secrets
+                  key: DATABASE_URL
+          ports:
+            - containerPort: 8001
