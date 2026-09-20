@@ -1,6 +1,8 @@
-import ResultsPage from './pages/ResultsPage'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import SubmitPage from './pages/SubmitPage'
+import ResultsPage from './pages/ResultsPage'
+import HistoryListPage from './pages/HistoryListPage'
+import RepoHistoryPage from './pages/RepoHistoryPage'
 
 function Layout({ children }) {
   return (
@@ -22,8 +24,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<SubmitPage />} />
           <Route path="/scans/:scanId" element={<ResultsPage />} />
-          <Route path="/history" element={<h1>History (coming soon)</h1>} />
-          <Route path="/history/:repoId" element={<h1>Repo history (coming soon)</h1>} />
+          <Route path="/history" element={<HistoryListPage />} />
+          <Route path="/history/:repoId" element={<RepoHistoryPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
