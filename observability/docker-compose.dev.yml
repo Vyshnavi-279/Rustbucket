@@ -1,7 +1,7 @@
 services:
   backend:
     build:
-      context: ./dev
+      context: ./observability/dev
       dockerfile: Dockerfile.fake
     command: ["--mode", "backend", "--port", "8000"]
     ports:
@@ -9,7 +9,7 @@ services:
 
   worker:
     build:
-      context: ./dev
+      context: ./observability/dev
       dockerfile: Dockerfile.fake
     command: ["--mode", "worker", "--port", "8001"]
     ports:
