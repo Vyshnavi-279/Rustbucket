@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+alembic
+psycopg2-binary
+pydantic-settings
+python-dotenv
+celery
+redis
+pygithub
+prometheus-fastapi-instrumentator
+prometheus-client
+pytest
+httpx
+ruff
