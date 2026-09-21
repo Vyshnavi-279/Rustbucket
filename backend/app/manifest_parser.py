@@ -1,6 +1,7 @@
 import json
 import re
 
+
 class ManifestError(Exception):
     pass
 
@@ -16,8 +17,8 @@ def clean_version(version_str: str) -> str:
 def parse_package_json(text: str) -> list[dict]:
     try:
         data = json.loads(text)
-    except Exception as e:
-        raise ManifestError(f"Invalid package.json: {str(e)}")
+    except Exception as e:  # noqa: BLE001 -- convert any JSON parse failure into a typed ManifestError
+        raise ManifestError(f"Invalid package.json: {e!s}")
     
     deps = {}
     if "dependencies" in data and isinstance(data["dependencies"], dict):
@@ -38,7 +39,7 @@ def parse_requirements_txt(text: str) -> list[dict]:
     result = []
     for line in text.splitlines():
         line = line.strip()
-        if not line or line.startswith("#") or line.startswith("-r") or "://" in line:
+        if not line or line.startswith(("#", "-r")) or "://" in line:
             continue
         
         # Remove markers and extras

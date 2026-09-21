@@ -1,17 +1,18 @@
-from typing import List
-from fastapi import FastAPI, HTTPException, Depends, status
-from sqlalchemy.orm import Session
-from fastapi import FastAPI, HTTPException, Depends, status
-from sqlalchemy.orm import Session
-from prometheus_fastapi_instrumentator import Instrumentator
-from prometheus_client import Gauge
 import redis
-
+from app import crud, github_client
 from app.config import settings
 from app.db import get_db
-from app.schemas import ScanCreateRequest, ScanCreateResponse, RepoResponse, HistoryItemResponse
-from app import crud, github_client
+from app.schemas import (
+    HistoryItemResponse,
+    RepoResponse,
+    ScanCreateRequest,
+    ScanCreateResponse,
+)
 from app.worker import run_scan_task
+from fastapi import Depends, FastAPI, HTTPException
+from prometheus_client import Gauge
+from prometheus_fastapi_instrumentator import Instrumentator
+from sqlalchemy.orm import Session
 
 app = FastAPI(title="Rustbucket Backend API", version="1.0.0")
 
@@ -27,7 +28,7 @@ async def update_queue_gauge(request, call_next):
     try:
         length = redis_client.llen("celery")
         queue_gauge.set(length)
-    except Exception:
+    except Exception:  # noqa: BLE001, S110 -- best-effort metric, must not break the request
         pass
     return await call_next(request)
 
@@ -75,13 +76,14 @@ def get_scan(scan_id: int, db: Session = Depends(get_db)):
         "result": result_data
     }
 
-@app.get("/api/repos", response_model=List[RepoResponse])
+@app.get("/api/repos", response_model=list[RepoResponse])
 def get_repos(db: Session = Depends(get_db)):
     return crud.list_repos_with_latest(db)
 
-@app.get("/api/repos/{repo_id}/history", response_model=List[HistoryItemResponse])
+@app.get("/api/repos/{repo_id}/history", response_model=list[HistoryItemResponse])
 def get_repo_history(repo_id: int, db: Session = Depends(get_db)):
     history = crud.get_history(db, repo_id)
     if not history and not db.query(crud.Repo).filter(crud.Repo.id == repo_id).first():
         raise HTTPException(status_code=404, detail="Repo not found")
     return history
+

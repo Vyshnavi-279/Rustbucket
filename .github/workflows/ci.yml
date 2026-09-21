@@ -4,51 +4,120 @@ on:
   push:
     branches:
       - main
-      - p3-devops
   pull_request:
     branches:
       - main
 
+permissions:
+  contents: read
+
 jobs:
   backend:
+    name: Backend checks
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Check whether backend/ has code yet
+        id: guard
+        run: |
+          if [ -f backend/requirements.txt ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "backend/requirements.txt not found, skipping backend checks"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.run == 'true'
         with:
           python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
 
-      - name: Install backend dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r backend/requirements.txt
+      - name: Install dependencies
+        if: steps.guard.outputs.run == 'true'
+        run: pip install -r backend/requirements.txt
 
-      - name: Check Python syntax
+      - name: Lint
+        if: steps.guard.outputs.run == 'true'
+        run: ruff check backend
+
+      - name: Test
+        if: steps.guard.outputs.run == 'true'
+        run: pytest backend -m "not network"
+
+  scanner:
+    name: Scanner checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check whether scanner/ has code yet
+        id: guard
         run: |
-          python -m compileall backend/app
+          if [ -f scanner/requirements.txt ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "scanner/requirements.txt not found, skipping scanner checks"
+          fi
+
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.run == 'true'
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: scanner/requirements.txt
+
+      - name: Install dependencies
+        if: steps.guard.outputs.run == 'true'
+        run: pip install -r scanner/requirements.txt
+
+      - name: Lint
+        if: steps.guard.outputs.run == 'true'
+        run: ruff check scanner
+
+      - name: Test
+        if: steps.guard.outputs.run == 'true'
+        run: pytest scanner -m "not network"
 
   frontend:
+    name: Frontend checks
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Check whether frontend/ has code yet
+        id: guard
+        run: |
+          if [ -f frontend/package-lock.json ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "frontend/package-lock.json not found, skipping frontend checks"
+          fi
+
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.run == 'true'
         with:
-          node-version: "20"
+          node-version: 22
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
-      - name: Install frontend dependencies
+      - name: Install dependencies
+        if: steps.guard.outputs.run == 'true'
         working-directory: frontend
         run: npm ci
 
-      - name: Build frontend
+      - name: Lint
+        if: steps.guard.outputs.run == 'true'
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Build
+        if: steps.guard.outputs.run == 'true'
         working-directory: frontend
         run: npm run build
+
+      - name: Test
+        if: steps.guard.outputs.run == 'true'
+        working-directory: frontend
+        run: npm test

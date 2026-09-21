@@ -1,9 +1,10 @@
-from celery import Celery
 import time
-from prometheus_client import start_http_server, Counter, Histogram
+
+from app import crud, github_client, manifest_parser, scanner_adapter
 from app.config import settings
 from app.db import SessionLocal
-from app import crud, github_client, manifest_parser, scanner_adapter
+from celery import Celery
+from prometheus_client import Counter, Histogram, start_http_server
 
 celery_app = Celery("rustbucket_worker", broker=settings.REDIS_URL, backend=settings.REDIS_URL)
 celery_app.conf.task_time_limit = 300
@@ -17,7 +18,7 @@ SCAN_DURATION = Histogram("rustbucket_scan_duration_seconds", "Histogram of scan
 # Start Prometheus metrics exporter on port 8001
 try:
     start_http_server(8001)
-except Exception:
+except Exception:  # noqa: BLE001, S110 -- metrics server is best-effort, must not crash the worker
     pass
 
 @celery_app.task(name="app.worker.run_scan_task")
@@ -61,7 +62,7 @@ def run_scan_task(scan_id: int):
         
         SCANS_COMPLETED.inc()
         SCAN_DURATION.observe(time.time() - start_time)
-    except Exception as e:
+    except Exception as e:  # noqa: BLE001 -- task must never leave a scan stuck in "running" (see plan 1.6)
         SCANS_FAILED.inc()
         crud.update_scan_status(db, scan_id, "failed", error=str(e))
     finally:

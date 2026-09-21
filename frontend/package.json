@@ -4,13 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "test": "vitest run --passWithNoTests",
-  "mock": "node mock-server/server.js",
-  "preview": "vite preview"
-},
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "test": "vitest run --passWithNoTests",
+    "mock": "node mock-server/server.js",
+    "preview": "vite preview"
+  },
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
