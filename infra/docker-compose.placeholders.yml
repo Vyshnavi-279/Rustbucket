@@ -1,0 +1,20 @@
+﻿services:
+  backend:
+    build:
+      context: .
+      dockerfile: infra/placeholders/backend/Dockerfile
+    command: uvicorn app:app --host 0.0.0.0 --port 8000
+    depends_on: []
+
+  worker:
+    build:
+      context: .
+      dockerfile: infra/placeholders/worker/Dockerfile
+    depends_on: []
+
+  frontend:
+    build:
+      context: .
+      dockerfile: infra/placeholders/frontend/Dockerfile
+    depends_on:
+      - backend

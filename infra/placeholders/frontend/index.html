@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rustbucket Placeholder</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 2.5rem 3rem;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      max-width: 420px;
+    }
+    h1 { margin: 0 0 0.5rem; font-size: 1.6rem; }
+    p.tagline { color: #94a3b8; margin: 0 0 1.5rem; }
+    #status {
+      font-family: ui-monospace, monospace;
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      word-break: break-word;
+    }
+    .ok { color: #4ade80; }
+    .err { color: #f87171; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🪣 Rustbucket placeholder</h1>
+    <p class="tagline">Don't let your dependencies rust away.</p>
+    <div id="status">Checking backend via /api/ping ...</div>
+  </div>
+
+  <script>
+    async function checkApi() {
+      const el = document.getElementById("status");
+      try {
+        const res = await fetch("/api/ping");
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        const data = await res.json();
+        el.textContent = "✅ nginx → backend proxy OK: " + JSON.stringify(data);
+        el.className = "ok";
+      } catch (err) {
+        el.textContent = "❌ Could not reach backend: " + err.message;
+        el.className = "err";
+      }
+    }
+    checkApi();
+  </script>
+</body>
+</html>

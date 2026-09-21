@@ -13,6 +13,8 @@ RUN pip install --no-cache-dir --upgrade pip \
 COPY backend/app /app/app
 COPY backend/alembic /app/alembic
 COPY backend/alembic.ini /app/alembic.ini
+RUN useradd --create-home --shell /bin/bash appuser
+USER appuser
 
 EXPOSE 8000
 

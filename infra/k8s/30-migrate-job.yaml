@@ -10,7 +10,8 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: migrate
-          image: ghcr.io/<owner>/rustbucket-backend:latest
+          image: ghcr.io/vyshnavi-279/rustbucket-backend:latest
+          imagePullPolicy: IfNotPresent
           command:
             - alembic
             - upgrade

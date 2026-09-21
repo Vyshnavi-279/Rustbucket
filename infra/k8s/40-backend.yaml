@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ghcr.io/<owner>/rustbucket-backend:latest
+          image: ghcr.io/vyshnavi-279/rustbucket-backend:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8000
           envFrom:
@@ -27,6 +28,18 @@ spec:
                 secretKeyRef:
                   name: rustbucket-secrets
                   key: DATABASE_URL
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: rustbucket-secrets
+                  key: GITHUB_TOKEN
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
           readinessProbe:
             httpGet:
               path: /health
@@ -39,7 +52,6 @@ spec:
               port: 8000
             initialDelaySeconds: 20
             periodSeconds: 20
-
 ---
 apiVersion: v1
 kind: Service
