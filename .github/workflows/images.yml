@@ -141,8 +141,8 @@ jobs:
       - name: Tag and push
         run: |
           SRC=rustbucket-${{ matrix.service }}:${{ github.sha }}
-          SHA_TAG=ghcr.io/${{ github.repository_owner }}/rustbucket-${{ matrix.service }}:${{ github.sha }}
-          LATEST_TAG=ghcr.io/${{ github.repository_owner }}/rustbucket-${{ matrix.service }}:latest
+          SHA_TAG=ghcr.io/vyshnavi-279/rustbucket-${{ matrix.service }}:${{ github.sha }}
+          LATEST_TAG=ghcr.io/vyshnavi-279/rustbucket-${{ matrix.service }}:latest
           docker tag "$SRC" "$SHA_TAG"
           docker tag "$SRC" "$LATEST_TAG"
           docker push "$SHA_TAG"
