@@ -1,0 +1,146 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-datasources
+  namespace: rustbucket
+data:
+  prometheus.yml: |
+    apiVersion: 1
+
+    datasources:
+      - name: Prometheus
+        uid: prometheus
+        type: prometheus
+        access: proxy
+        url: http://prometheus:9090
+        isDefault: true
+        editable: false
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard-provider
+  namespace: rustbucket
+data:
+  dashboards.yml: |
+    apiVersion: 1
+
+    providers:
+      - name: Rustbucket
+        orgId: 1
+        folder: ""
+        type: file
+        disableDeletion: false
+        allowUiUpdates: true
+        updateIntervalSeconds: 10
+        options:
+          path: /var/lib/grafana/dashboards---
+apiVersion: v1
+data:
+  rustbucket.json: "{\r\n  \"uid\": \"rustbucket-overview\",\r\n  \"title\": \"Rustbucket
+    Overview\",\r\n  \"tags\": [\"rustbucket\"],\r\n  \"timezone\": \"browser\",\r\n
+    \ \"schemaVersion\": 39,\r\n  \"version\": 1,\r\n  \"editable\": true,\r\n  \"refresh\":
+    \"5s\",\r\n  \"time\": { \"from\": \"now-15m\", \"to\": \"now\" },\r\n  \"panels\":
+    [\r\n    {\r\n      \"id\": 1,\r\n      \"type\": \"stat\",\r\n      \"title\":
+    \"API error rate (5xx)\",\r\n      \"gridPos\": { \"h\": 5, \"w\": 6, \"x\": 0,
+    \"y\": 0 },\r\n      \"datasource\": { \"type\": \"prometheus\", \"uid\": \"prometheus\"
+    },\r\n      \"targets\": [\r\n        {\r\n          \"refId\": \"A\",\r\n          \"expr\":
+    \"sum(rate(http_requests_total{status=~\\\"5..\\\"}[5m])) / sum(rate(http_requests_total[5m]))\"\r\n
+    \       }\r\n      ],\r\n      \"fieldConfig\": {\r\n        \"defaults\": {\r\n
+    \         \"unit\": \"percentunit\",\r\n          \"decimals\": 1,\r\n          \"thresholds\":
+    {\r\n            \"mode\": \"absolute\",\r\n            \"steps\": [\r\n              {
+    \"color\": \"green\", \"value\": null },\r\n              { \"color\": \"red\",
+    \"value\": 0.05 }\r\n            ]\r\n          }\r\n        },\r\n        \"overrides\":
+    []\r\n      },\r\n      \"options\": { \"colorMode\": \"background\", \"graphMode\":
+    \"none\", \"reduceOptions\": { \"calcs\": [\"lastNotNull\"] } }\r\n    },\r\n
+    \   {\r\n      \"id\": 2,\r\n      \"type\": \"stat\",\r\n      \"title\": \"Scan
+    success ratio\",\r\n      \"gridPos\": { \"h\": 5, \"w\": 6, \"x\": 6, \"y\":
+    0 },\r\n      \"datasource\": { \"type\": \"prometheus\", \"uid\": \"prometheus\"
+    },\r\n      \"targets\": [\r\n        {\r\n          \"refId\": \"A\",\r\n          \"expr\":
+    \"sum(rate(rustbucket_scans_completed_total[5m])) / sum(rate(rustbucket_scans_started_total[5m]))\"\r\n
+    \       }\r\n      ],\r\n      \"fieldConfig\": {\r\n        \"defaults\": {\r\n
+    \         \"unit\": \"percentunit\",\r\n          \"decimals\": 0,\r\n          \"min\":
+    0,\r\n          \"max\": 1,\r\n          \"thresholds\": {\r\n            \"mode\":
+    \"absolute\",\r\n            \"steps\": [\r\n              { \"color\": \"red\",
+    \"value\": null },\r\n              { \"color\": \"yellow\", \"value\": 0.8 },\r\n
+    \             { \"color\": \"green\", \"value\": 0.95 }\r\n            ]\r\n          }\r\n
+    \       },\r\n        \"overrides\": []\r\n      },\r\n      \"options\": { \"colorMode\":
+    \"background\", \"graphMode\": \"none\", \"reduceOptions\": { \"calcs\": [\"lastNotNull\"]
+    } }\r\n    },\r\n    {\r\n      \"id\": 3,\r\n      \"type\": \"stat\",\r\n      \"title\":
+    \"Targets up\",\r\n      \"gridPos\": { \"h\": 5, \"w\": 6, \"x\": 12, \"y\":
+    0 },\r\n      \"datasource\": { \"type\": \"prometheus\", \"uid\": \"prometheus\"
+    },\r\n      \"targets\": [\r\n        { \"refId\": \"A\", \"expr\": \"up\", \"legendFormat\":
+    \"{{job}}\" }\r\n      ],\r\n      \"fieldConfig\": {\r\n        \"defaults\":
+    {\r\n          \"mappings\": [\r\n            {\r\n              \"type\": \"value\",\r\n
+    \             \"options\": {\r\n                \"0\": { \"text\": \"DOWN\", \"color\":
+    \"red\" },\r\n                \"1\": { \"text\": \"UP\", \"color\": \"green\"
+    }\r\n              }\r\n            }\r\n          ],\r\n          \"thresholds\":
+    {\r\n            \"mode\": \"absolute\",\r\n            \"steps\": [\r\n              {
+    \"color\": \"red\", \"value\": null },\r\n              { \"color\": \"green\",
+    \"value\": 1 }\r\n            ]\r\n          }\r\n        },\r\n        \"overrides\":
+    []\r\n      },\r\n      \"options\": { \"colorMode\": \"background\", \"graphMode\":
+    \"none\", \"textMode\": \"value_and_name\", \"reduceOptions\": { \"calcs\": [\"lastNotNull\"]
+    } }\r\n    },\r\n    {\r\n      \"id\": 4,\r\n      \"type\": \"gauge\",\r\n      \"title\":
+    \"Queue length (now)\",\r\n      \"gridPos\": { \"h\": 5, \"w\": 6, \"x\": 18,
+    \"y\": 0 },\r\n      \"datasource\": { \"type\": \"prometheus\", \"uid\": \"prometheus\"
+    },\r\n      \"targets\": [\r\n        { \"refId\": \"A\", \"expr\": \"rustbucket_queue_length\"
+    }\r\n      ],\r\n      \"fieldConfig\": {\r\n        \"defaults\": {\r\n          \"unit\":
+    \"short\",\r\n          \"min\": 0,\r\n          \"max\": 20,\r\n          \"thresholds\":
+    {\r\n            \"mode\": \"absolute\",\r\n            \"steps\": [\r\n              {
+    \"color\": \"green\", \"value\": null },\r\n              { \"color\": \"yellow\",
+    \"value\": 8 },\r\n              { \"color\": \"red\", \"value\": 14 }\r\n            ]\r\n
+    \         }\r\n        },\r\n        \"overrides\": []\r\n      },\r\n      \"options\":
+    { \"showThresholdMarkers\": true, \"reduceOptions\": { \"calcs\": [\"lastNotNull\"]
+    } }\r\n    },\r\n    {\r\n      \"id\": 5,\r\n      \"type\": \"timeseries\",\r\n
+    \     \"title\": \"API request rate by endpoint\",\r\n      \"gridPos\": { \"h\":
+    8, \"w\": 12, \"x\": 0, \"y\": 5 },\r\n      \"datasource\": { \"type\": \"prometheus\",
+    \"uid\": \"prometheus\" },\r\n      \"targets\": [\r\n        {\r\n          \"refId\":
+    \"A\",\r\n          \"expr\": \"sum(rate(http_requests_total[1m])) by (handler)\",\r\n
+    \         \"legendFormat\": \"{{handler}}\"\r\n        }\r\n      ],\r\n      \"fieldConfig\":
+    { \"defaults\": { \"unit\": \"reqps\" }, \"overrides\": [] },\r\n      \"options\":
+    { \"legend\": { \"displayMode\": \"list\", \"placement\": \"bottom\" } }\r\n    },\r\n
+    \   {\r\n      \"id\": 6,\r\n      \"type\": \"timeseries\",\r\n      \"title\":
+    \"API latency p50 / p95\",\r\n      \"gridPos\": { \"h\": 8, \"w\": 12, \"x\":
+    12, \"y\": 5 },\r\n      \"datasource\": { \"type\": \"prometheus\", \"uid\":
+    \"prometheus\" },\r\n      \"targets\": [\r\n        {\r\n          \"refId\":
+    \"A\",\r\n          \"expr\": \"histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[5m]))
+    by (le))\",\r\n          \"legendFormat\": \"p50\"\r\n        },\r\n        {\r\n
+    \         \"refId\": \"B\",\r\n          \"expr\": \"histogram_quantile(0.95,
+    sum(rate(http_request_duration_seconds_bucket[5m])) by (le))\",\r\n          \"legendFormat\":
+    \"p95\"\r\n        }\r\n      ],\r\n      \"fieldConfig\": { \"defaults\": { \"unit\":
+    \"s\" }, \"overrides\": [] },\r\n      \"options\": { \"legend\": { \"displayMode\":
+    \"list\", \"placement\": \"bottom\" } }\r\n    },\r\n    {\r\n      \"id\": 7,\r\n
+    \     \"type\": \"timeseries\",\r\n      \"title\": \"Scans started / completed
+    / failed per minute\",\r\n      \"gridPos\": { \"h\": 8, \"w\": 12, \"x\": 0,
+    \"y\": 13 },\r\n      \"datasource\": { \"type\": \"prometheus\", \"uid\": \"prometheus\"
+    },\r\n      \"targets\": [\r\n        {\r\n          \"refId\": \"A\",\r\n          \"expr\":
+    \"rate(rustbucket_scans_started_total[5m]) * 60\",\r\n          \"legendFormat\":
+    \"started\"\r\n        },\r\n        {\r\n          \"refId\": \"B\",\r\n          \"expr\":
+    \"rate(rustbucket_scans_completed_total[5m]) * 60\",\r\n          \"legendFormat\":
+    \"completed\"\r\n        },\r\n        {\r\n          \"refId\": \"C\",\r\n          \"expr\":
+    \"rate(rustbucket_scans_failed_total[5m]) * 60\",\r\n          \"legendFormat\":
+    \"failed\"\r\n        }\r\n      ],\r\n      \"fieldConfig\": { \"defaults\":
+    { \"unit\": \"short\" }, \"overrides\": [] },\r\n      \"options\": { \"legend\":
+    { \"displayMode\": \"list\", \"placement\": \"bottom\" } }\r\n    },\r\n    {\r\n
+    \     \"id\": 8,\r\n      \"type\": \"timeseries\",\r\n      \"title\": \"Scan
+    duration p50 / p95\",\r\n      \"gridPos\": { \"h\": 8, \"w\": 12, \"x\": 12,
+    \"y\": 13 },\r\n      \"datasource\": { \"type\": \"prometheus\", \"uid\": \"prometheus\"
+    },\r\n      \"targets\": [\r\n        {\r\n          \"refId\": \"A\",\r\n          \"expr\":
+    \"histogram_quantile(0.50, sum(rate(rustbucket_scan_duration_seconds_bucket[10m]))
+    by (le))\",\r\n          \"legendFormat\": \"p50\"\r\n        },\r\n        {\r\n
+    \         \"refId\": \"B\",\r\n          \"expr\": \"histogram_quantile(0.95,
+    sum(rate(rustbucket_scan_duration_seconds_bucket[10m])) by (le))\",\r\n          \"legendFormat\":
+    \"p95\"\r\n        }\r\n      ],\r\n      \"fieldConfig\": { \"defaults\": { \"unit\":
+    \"s\" }, \"overrides\": [] },\r\n      \"options\": { \"legend\": { \"displayMode\":
+    \"list\", \"placement\": \"bottom\" } }\r\n    },\r\n    {\r\n      \"id\": 9,\r\n
+    \     \"type\": \"timeseries\",\r\n      \"title\": \"Queue length over time\",\r\n
+    \     \"gridPos\": { \"h\": 8, \"w\": 24, \"x\": 0, \"y\": 21 },\r\n      \"datasource\":
+    { \"type\": \"prometheus\", \"uid\": \"prometheus\" },\r\n      \"targets\": [\r\n
+    \       { \"refId\": \"A\", \"expr\": \"rustbucket_queue_length\", \"legendFormat\":
+    \"jobs waiting\" }\r\n      ],\r\n      \"fieldConfig\": { \"defaults\": { \"unit\":
+    \"short\", \"min\": 0 }, \"overrides\": [] },\r\n      \"options\": { \"legend\":
+    { \"displayMode\": \"list\", \"placement\": \"bottom\" } }\r\n    }\r\n  ]\r\n}"
+kind: ConfigMap
+metadata:
+  name: grafana-dashboard-json
+  namespace: rustbucket
