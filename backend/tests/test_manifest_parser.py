@@ -1,5 +1,6 @@
 from app.manifest_parser import parse_package_json, parse_requirements_txt
 
+
 def test_parse_package_json():
     content = '{"dependencies": {"lodash": "^4.17.15"}}'
     deps = parse_package_json(content)
