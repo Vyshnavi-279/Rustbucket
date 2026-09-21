@@ -1,0 +1,1747 @@
+{
+  "score": 0,
+  "summary": {
+    "total_dependencies": 30,
+    "critical": 15,
+    "high": 96,
+    "medium": 68,
+    "low": 13,
+    "outdated": 30,
+    "license_issues": 2
+  },
+  "vulnerabilities": [
+    {
+      "package": "crypto-js",
+      "version": "3.1.9-1",
+      "cve_id": "CVE-2023-46233",
+      "severity": "CRITICAL",
+      "fixed_version": "4.2.0",
+      "title": "crypto-js: PBKDF2 1,000 times weaker than specified in 1993 and 1.3M times weaker than current standard"
+    },
+    {
+      "package": "crypto-js",
+      "version": "3.1.9-1",
+      "cve_id": "CVE-2026-71851",
+      "severity": "CRITICAL",
+      "fixed_version": "4.0.0",
+      "title": "crypto-js: crypto-js: Insufficient Entropy in Cryptographic Secret Generation via Vulnerable CryptoJS Dependency Chain"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2019-14234",
+      "severity": "CRITICAL",
+      "fixed_version": "1.11.23, 2.1.11, 2.2.4",
+      "title": "Django: SQL injection possibility in key and index lookups for JSONField/HStoreField"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2019-19844",
+      "severity": "CRITICAL",
+      "fixed_version": "1.11.27, 2.2.9, 3.0.1",
+      "title": "Django: crafted email address allows account takeover"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2020-7471",
+      "severity": "CRITICAL",
+      "fixed_version": "1.11.28, 2.2.10, 3.0.3",
+      "title": "django: potential SQL injection via StringAgg(delimiter)"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2022-28346",
+      "severity": "CRITICAL",
+      "fixed_version": "2.2.28, 3.2.13, 4.0.4",
+      "title": "Django: SQL injection in QuerySet.annotate(),aggregate() and extra()"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2022-28347",
+      "severity": "CRITICAL",
+      "fixed_version": "2.2.28, 3.2.13, 4.0.4",
+      "title": "Django: SQL injection via QuerySet.explain(options) on PostgreSQL"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2025-64459",
+      "severity": "CRITICAL",
+      "fixed_version": "5.2.8, 5.1.14, 4.2.26",
+      "title": "django: Django SQL injection"
+    },
+    {
+      "package": "minimist",
+      "version": "1.2.0",
+      "cve_id": "CVE-2021-44906",
+      "severity": "CRITICAL",
+      "fixed_version": "1.2.6, 0.2.4",
+      "title": "minimist: prototype pollution"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2020-11538",
+      "severity": "CRITICAL",
+      "fixed_version": "7.1.0",
+      "title": "python-pillow: out-of-bounds reads/writes in the parsing of SGI image files in expandrow/expandrow2"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-25289",
+      "severity": "CRITICAL",
+      "fixed_version": "8.1.1",
+      "title": "python-pillow: insufficent fix for CVE-2020-35654 due to incorrect error checking in TiffDecode.c"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-34552",
+      "severity": "CRITICAL",
+      "fixed_version": "8.3.0",
+      "title": "python-pillow: Buffer overflow in image convert function"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2022-22817",
+      "severity": "CRITICAL",
+      "fixed_version": "9.0.1",
+      "title": "python-pillow: PIL.ImageMath.eval allows evaluation of arbitrary expressions"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2023-50447",
+      "severity": "CRITICAL",
+      "fixed_version": "10.2.0",
+      "title": "pillow: Arbitrary Code Execution via the environment parameter"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-59873",
+      "severity": "CRITICAL",
+      "fixed_version": "7.5.19",
+      "title": "tar: node-tar: Denial of Service via crafted gzip bomb"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2021-3749",
+      "severity": "HIGH",
+      "fixed_version": "0.21.2",
+      "title": "nodejs-axios: Regular expression denial of service in trim function"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2025-27152",
+      "severity": "HIGH",
+      "fixed_version": "1.8.2, 0.30.0",
+      "title": "axios: Possible SSRF and Credential Leakage via Absolute URL in axios Requests"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-25639",
+      "severity": "HIGH",
+      "fixed_version": "1.13.5, 0.30.3",
+      "title": "axios: Axios affected by Denial of Service via __proto__ Key in mergeConfig"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42033",
+      "severity": "HIGH",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: HTTP Transport Hijacking via Prototype Pollution"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42035",
+      "severity": "HIGH",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Arbitrary HTTP header injection via prototype pollution"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42043",
+      "severity": "HIGH",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: NO_PROXY bypass via crafted URL"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44486",
+      "severity": "HIGH",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Information disclosure of proxy credentials via HTTP redirects"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44487",
+      "severity": "HIGH",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Information disclosure of proxy credentials via redirect flows"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44492",
+      "severity": "HIGH",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Proxy bypass via IPv4-mapped IPv6 address non-normalization"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44495",
+      "severity": "HIGH",
+      "fixed_version": "1.15.2, 0.31.1",
+      "title": "axios: Axios: Information disclosure due to prototype pollution vulnerability"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44496",
+      "severity": "HIGH",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Client-side Denial of Service via unescaped regex metacharacters in XSRF cookie name"
+    },
+    {
+      "package": "celery",
+      "version": "4.4.0",
+      "cve_id": "CVE-2021-23727",
+      "severity": "HIGH",
+      "fixed_version": "5.2.2",
+      "title": "celery: stored command injection vulnerability may allow privileges escalation"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "CVE-2020-25659",
+      "severity": "HIGH",
+      "fixed_version": "3.2",
+      "title": "python-cryptography: Bleichenbacher timing oracle attack against RSA decryption"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "CVE-2023-0286",
+      "severity": "HIGH",
+      "fixed_version": "39.0.1",
+      "title": "openssl: X.400 address type confusion in X.509 GeneralName"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "CVE-2023-50782",
+      "severity": "HIGH",
+      "fixed_version": "42.0.0",
+      "title": "python-cryptography: Bleichenbacher timing oracle attack against RSA decryption - incomplete fix for CVE-2020-25659"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "CVE-2026-26007",
+      "severity": "HIGH",
+      "fixed_version": "46.0.5",
+      "title": "cryptography: cryptography Subgroup Attack Due to Missing Subgroup Validation for SECT Curves"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "GHSA-537c-gmf6-5ccf",
+      "severity": "HIGH",
+      "fixed_version": "48.0.1",
+      "title": "Vulnerable OpenSSL included in cryptography wheels"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2019-14232",
+      "severity": "HIGH",
+      "fixed_version": "1.11.23, 2.1.11, 2.2.4",
+      "title": "Django: backtracking in a regular expression in django.utils.text.Truncator leads to DoS"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2019-14233",
+      "severity": "HIGH",
+      "fixed_version": "1.11.23, 2.1.11, 2.2.4",
+      "title": "Django: the behavior of the underlying HTMLParser leading to DoS"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2019-14235",
+      "severity": "HIGH",
+      "fixed_version": "1.11.23, 2.1.11, 2.2.4",
+      "title": "Django: Potential memory exhaustion in django.utils.encoding.uri_to_iri()"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2019-19118",
+      "severity": "HIGH",
+      "fixed_version": "2.1.15, 2.2.8",
+      "title": "django: privilege escalation in the django admin"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2020-13254",
+      "severity": "HIGH",
+      "fixed_version": "2.2.13, 3.0.7",
+      "title": "django: potential data leakage via malformed memcached keys"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2020-24583",
+      "severity": "HIGH",
+      "fixed_version": "2.2.16, 3.0.10, 3.1.1",
+      "title": "django: incorrect permissions on intermediate-level directories on Python 3.7+"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2020-9402",
+      "severity": "HIGH",
+      "fixed_version": "1.11.29, 2.2.11, 3.0.4",
+      "title": "django: potential SQL injection via \"tolerance\" parameter in GIS functions and aggregates on Oracle"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-31542",
+      "severity": "HIGH",
+      "fixed_version": "2.2.21, 3.1.9, 3.2.1",
+      "title": "django: Potential directory-traversal via uploaded files"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-33571",
+      "severity": "HIGH",
+      "fixed_version": "2.2.24, 3.1.12, 3.2.4",
+      "title": "django: Possible indeterminate SSRF, RFI, and LFI attacks since validators accepted leading zeros in IPv4 addresses"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-45115",
+      "severity": "HIGH",
+      "fixed_version": "2.2.26, 3.2.11, 4.0.1",
+      "title": "django: Denial-of-service possibility in UserAttributeSimilarityValidator"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-45116",
+      "severity": "HIGH",
+      "fixed_version": "2.2.26, 3.2.11, 4.0.1",
+      "title": "django: Potential information disclosure in dictsort template filter"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2022-23833",
+      "severity": "HIGH",
+      "fixed_version": "2.2.27, 3.2.12, 4.0.2",
+      "title": "django: Denial-of-service possibility in file uploads"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2022-36359",
+      "severity": "HIGH",
+      "fixed_version": "3.2.15, 4.0.7",
+      "title": "An issue was discovered in the HTTP FileResponse class in Django 3.2 b ..."
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2025-57833",
+      "severity": "HIGH",
+      "fixed_version": "4.2.24, 5.1.12, 5.2.6",
+      "title": "django: Django SQL injection in FilteredRelation column aliases"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2025-64458",
+      "severity": "HIGH",
+      "fixed_version": "5.2.8, 5.1.14, 4.2.26",
+      "title": "Django: Denial-of-service vulnerability in Django on Windows"
+    },
+    {
+      "package": "flask",
+      "version": "1.0.2",
+      "cve_id": "CVE-2023-30861",
+      "severity": "HIGH",
+      "fixed_version": "2.3.2, 2.2.5",
+      "title": "flask: Possible disclosure of permanent session cookie due to missing Vary: Cookie header"
+    },
+    {
+      "package": "gunicorn",
+      "version": "19.9.0",
+      "cve_id": "CVE-2024-1135",
+      "severity": "HIGH",
+      "fixed_version": "22.0.0",
+      "title": "python-gunicorn: HTTP Request Smuggling due to improper validation of Transfer-Encoding headers"
+    },
+    {
+      "package": "gunicorn",
+      "version": "19.9.0",
+      "cve_id": "CVE-2024-6827",
+      "severity": "HIGH",
+      "fixed_version": "22.0.0",
+      "title": "gunicorn: HTTP Request Smuggling in benoitc/gunicorn"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2020-8203",
+      "severity": "HIGH",
+      "fixed_version": "4.17.19",
+      "title": "nodejs-lodash: prototype pollution in zipObjectDeep function"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2021-23337",
+      "severity": "HIGH",
+      "fixed_version": "4.17.21",
+      "title": "nodejs-lodash: command injection via template"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2026-4800",
+      "severity": "HIGH",
+      "fixed_version": "4.18.0",
+      "title": "lodash: lodash: Arbitrary code execution via untrusted input in template imports"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "NSWG-ECO-516",
+      "severity": "HIGH",
+      "fixed_version": ">=4.17.19",
+      "title": "Allocation of Resources Without Limits or Throttling"
+    },
+    {
+      "package": "moment",
+      "version": "2.24.0",
+      "cve_id": "CVE-2022-24785",
+      "severity": "HIGH",
+      "fixed_version": "2.29.2",
+      "title": "Moment.js: Path traversal  in moment.locale"
+    },
+    {
+      "package": "moment",
+      "version": "2.24.0",
+      "cve_id": "CVE-2022-31129",
+      "severity": "HIGH",
+      "fixed_version": "2.29.4",
+      "title": "moment: inefficient parsing algorithm resulting in DoS"
+    },
+    {
+      "package": "numpy",
+      "version": "1.17.4",
+      "cve_id": "CVE-2021-41495",
+      "severity": "HIGH",
+      "fixed_version": "1.19",
+      "title": "numpy: NULL pointer dereference in numpy.sort in in the PyArray_DescrNew() due to missing return-value validation"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2020-10177",
+      "severity": "HIGH",
+      "fixed_version": "7.1.0",
+      "title": "python-pillow: multiple out-of-bounds reads in libImaging/FliDecode.c"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2020-10378",
+      "severity": "HIGH",
+      "fixed_version": "7.1.0",
+      "title": "python-pillow: an out-of-bounds read in libImaging/PcxDecode.c can occur when reading PCX files"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2020-10379",
+      "severity": "HIGH",
+      "fixed_version": "7.1.0",
+      "title": "python-pillow: two buffer overflows in libImaging/TiffDecode.c due to small buffers allocated in ImagingLibTiffDecode()"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2020-10994",
+      "severity": "HIGH",
+      "fixed_version": "7.1.0",
+      "title": "python-pillow: multiple out-of-bounds reads via a crafted JP2 file"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2020-35653",
+      "severity": "HIGH",
+      "fixed_version": "8.1.0",
+      "title": "python-pillow: Buffer over-read in PCX image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2020-35654",
+      "severity": "HIGH",
+      "fixed_version": "8.1.0",
+      "title": "python-pillow: decoding crafted YCbCr files could result in heap-based buffer overflow"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-23437",
+      "severity": "HIGH",
+      "fixed_version": "8.3.2",
+      "title": "python-pillow: possible ReDoS via the getrgb function"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-25287",
+      "severity": "HIGH",
+      "fixed_version": "8.2.0",
+      "title": "python-pillow: Out-of-bounds read in J2K image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-25288",
+      "severity": "HIGH",
+      "fixed_version": "8.2.0",
+      "title": "python-pillow: Out-of-bounds read in J2K image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-25290",
+      "severity": "HIGH",
+      "fixed_version": "8.1.1",
+      "title": "python-pillow: Negative-offset memcpy in TIFF image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-25291",
+      "severity": "HIGH",
+      "fixed_version": "8.2.0",
+      "title": "python-pillow: out-of-bounds read in TiffReadRGBATile in TiffDecode.c"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-25293",
+      "severity": "HIGH",
+      "fixed_version": "8.1.1",
+      "title": "python-pillow: Out-of-bounds read in SGI RLE image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-27921",
+      "severity": "HIGH",
+      "fixed_version": "8.1.2",
+      "title": "python-pillow: Excessive memory allocation in BLP image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-27922",
+      "severity": "HIGH",
+      "fixed_version": "8.1.2",
+      "title": "python-pillow: Excessive memory allocation in ICNS image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-27923",
+      "severity": "HIGH",
+      "fixed_version": "8.1.2",
+      "title": "python-pillow: Excessive memory allocation in ICO image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-28675",
+      "severity": "HIGH",
+      "fixed_version": "8.2.0",
+      "title": "python-pillow: Excessive memory allocation in PSD image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-28676",
+      "severity": "HIGH",
+      "fixed_version": "8.2.0",
+      "title": "python-pillow: Infinite loop in FLI image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-28677",
+      "severity": "HIGH",
+      "fixed_version": "8.2.0",
+      "title": "python-pillow: Excessive CPU use in EPS image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2022-24303",
+      "severity": "HIGH",
+      "fixed_version": "9.0.1",
+      "title": "python-pillow: temporary directory with a space character allows removal of unrelated file after im.show() and related actions"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2022-45198",
+      "severity": "HIGH",
+      "fixed_version": "9.2.0",
+      "title": "Pillow before 9.2.0 performs Improper Handling of Highly Compressed GI ..."
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2023-44271",
+      "severity": "HIGH",
+      "fixed_version": "10.0.0",
+      "title": "python-pillow: uncontrolled resource consumption when textlength in an ImageDraw instance operates on a long text argument"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2023-4863",
+      "severity": "HIGH",
+      "fixed_version": "10.0.1",
+      "title": "libwebp: Heap buffer overflow in WebP Codec"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2024-28219",
+      "severity": "HIGH",
+      "fixed_version": "10.3.0",
+      "title": "python-pillow: buffer overflow in _imagingcms.c"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-54058",
+      "severity": "HIGH",
+      "fixed_version": "12.3.0",
+      "title": "Pillow: Pillow: Memory disclosure or denial of service via crafted McIdas AREA image"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-54059",
+      "severity": "HIGH",
+      "fixed_version": "12.3.0",
+      "title": "python-pillow: Pillow: Denial of Service via crafted PCF font data"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-54060",
+      "severity": "HIGH",
+      "fixed_version": "12.3.0",
+      "title": "python-pillow: Pillow: Denial of Service via excessive memory allocation when processing font files"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-55379",
+      "severity": "HIGH",
+      "fixed_version": "12.3.0",
+      "title": "python-pillow: Pillow: Denial of Service via crafted BDF font file"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-55380",
+      "severity": "HIGH",
+      "fixed_version": "12.3.0",
+      "title": "python-pillow: Pillow: Denial of Service via crafted GD 2.x image file"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-59197",
+      "severity": "HIGH",
+      "fixed_version": "12.3.0",
+      "title": "Pillow: Pillow: Native heap out-of-bounds write"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-59199",
+      "severity": "HIGH",
+      "fixed_version": "12.3.0",
+      "title": "Pillow: Pillow: Denial of Service via out-of-bounds write in image processing"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-59200",
+      "severity": "HIGH",
+      "fixed_version": "12.3.0",
+      "title": "Pillow: Pillow: Denial of service via crafted PDF stream"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-59205",
+      "severity": "HIGH",
+      "fixed_version": "12.3.0",
+      "title": "Pillow: Pillow: Controlled native heap corruption in ImageCms.ImageCmsTransform.apply API"
+    },
+    {
+      "package": "shelljs",
+      "version": "0.8.3",
+      "cve_id": "CVE-2022-0144",
+      "severity": "HIGH",
+      "fixed_version": "0.8.5",
+      "title": "nodejs-shelljs: improper privilege management"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2021-32803",
+      "severity": "HIGH",
+      "fixed_version": "3.2.3, 4.4.15, 5.0.7, 6.1.2",
+      "title": "nodejs-tar: Insufficient symlink protection allowing arbitrary file creation and overwrite"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2021-32804",
+      "severity": "HIGH",
+      "fixed_version": "3.2.2, 4.4.14, 5.0.6, 6.1.1",
+      "title": "nodejs-tar: Insufficient absolute path sanitization allowing arbitrary file creation and overwrite"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2021-37701",
+      "severity": "HIGH",
+      "fixed_version": "4.4.16, 5.0.8, 6.1.7",
+      "title": "nodejs-tar: Insufficient symlink protection due to directory cache poisoning using symbolic links allowing arbitrary file creation and overwrite"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2021-37712",
+      "severity": "HIGH",
+      "fixed_version": "4.4.18, 5.0.10, 6.1.9",
+      "title": "nodejs-tar: Insufficient symlink protection due to directory cache poisoning using symbolic links allowing arbitrary file creation and overwrite"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2021-37713",
+      "severity": "HIGH",
+      "fixed_version": "4.4.18, 5.0.10, 6.1.9",
+      "title": "nodejs-tar: Arbitrary File Creation/Overwrite on Windows via insufficient relative path sanitization"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-23745",
+      "severity": "HIGH",
+      "fixed_version": "7.5.3",
+      "title": "node-tar: tar: node-tar: Arbitrary file overwrite and symlink poisoning via unsanitized linkpaths in archives"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-23950",
+      "severity": "HIGH",
+      "fixed_version": "7.5.4",
+      "title": "node-tar: tar: node-tar: Arbitrary file overwrite via Unicode path collision race condition"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-24842",
+      "severity": "HIGH",
+      "fixed_version": "7.5.7",
+      "title": "node-tar: tar: node-tar: Arbitrary file creation via path traversal bypass in hardlink security check"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-26960",
+      "severity": "HIGH",
+      "fixed_version": "7.5.8",
+      "title": "node-tar: node-tar: Arbitrary file read/write via malicious archive hardlink creation"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-29786",
+      "severity": "HIGH",
+      "fixed_version": "7.5.10",
+      "title": "node-tar: hardlink path traversal via drive-relative linkpath"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-31802",
+      "severity": "HIGH",
+      "fixed_version": "7.5.11",
+      "title": "tar: tar: File overwrite via drive-relative symlink traversal"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-59874",
+      "severity": "HIGH",
+      "fixed_version": "7.5.18",
+      "title": "tar: Node-tar: Denial of Service via malformed tar archive header"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-73566",
+      "severity": "HIGH",
+      "fixed_version": "7.5.21",
+      "title": "tar: node-tar: Denial of Service via crafted long-path tar archive"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2020-7212",
+      "severity": "HIGH",
+      "fixed_version": "1.25.8",
+      "title": "python-urllib3: inefficient algorithm allows a DoS (CPU consumption) in _encode_invalid_chars function in util/url.py"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2023-43804",
+      "severity": "HIGH",
+      "fixed_version": "2.0.6, 1.26.17",
+      "title": "python-urllib3: Cookie request header isn't stripped during cross-origin redirects"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2025-66418",
+      "severity": "HIGH",
+      "fixed_version": "2.6.0",
+      "title": "urllib3: urllib3: Unbounded decompression chain leads to resource exhaustion"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2025-66471",
+      "severity": "HIGH",
+      "fixed_version": "2.6.0",
+      "title": "urllib3: urllib3 Streaming API improperly handles highly compressed data"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2026-21441",
+      "severity": "HIGH",
+      "fixed_version": "2.6.3",
+      "title": "urllib3: urllib3 vulnerable to decompression-bomb safeguard bypass when following HTTP redirects (streaming API)"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2026-44431",
+      "severity": "HIGH",
+      "fixed_version": "2.7.0",
+      "title": "urllib3: urllib3: Information disclosure via cross-origin redirects forwarding sensitive headers"
+    },
+    {
+      "package": "ws",
+      "version": "6.1.0",
+      "cve_id": "CVE-2024-37890",
+      "severity": "HIGH",
+      "fixed_version": "5.2.4, 6.2.3, 7.5.10, 8.17.1",
+      "title": "nodejs-ws: denial of service when handling a request with many HTTP headers"
+    },
+    {
+      "package": "ws",
+      "version": "6.1.0",
+      "cve_id": "CVE-2026-48779",
+      "severity": "HIGH",
+      "fixed_version": "5.2.5, 6.2.4, 7.5.11, 8.21.0",
+      "title": "ws: ws: Denial of Service via memory exhaustion from small WebSocket fragments"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2020-28168",
+      "severity": "MEDIUM",
+      "fixed_version": "0.21.1",
+      "title": "nodejs-axios: allows an attacker to bypass a proxy by providing a URL that responds with a redirect to a restricted host or IP address"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2023-45857",
+      "severity": "MEDIUM",
+      "fixed_version": "1.6.0, 0.28.0",
+      "title": "axios: exposure of confidential data stored in cookies"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2025-62718",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.0, 0.31.0",
+      "title": "axios: Axios: Server-Side Request Forgery and proxy bypass due to improper hostname normalization"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-40175",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.0, 0.31.0",
+      "title": "axios: Axios: Remote Code Execution via Prototype Pollution escalation"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42034",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Denial of Service via oversized streamed uploads bypassing body limits"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42036",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Denial of Service via unbounded stream consumption when 'responseType: 'stream'' is used"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42038",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Information disclosure due to `no_proxy` bypass"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42039",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Node.js: Axios: Denial of Service via unbounded recursion in toFormData with deeply nested request data"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42041",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Authentication bypass due to prototype pollution of HTTP error handling"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42042",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: XSRF token bypass leading to information disclosure"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44490",
+      "severity": "MEDIUM",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Information disclosure and denial of service due to prototype pollution"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-67316",
+      "severity": "MEDIUM",
+      "fixed_version": "1.18.0, 0.33.0",
+      "title": "axios: axios: Prototype Pollution allows unauthorized data transmission and network redirection"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-67319",
+      "severity": "MEDIUM",
+      "fixed_version": "0.33.0, 1.18.0",
+      "title": "axios: axios: Information disclosure and data manipulation via prototype pollution"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "CVE-2023-23931",
+      "severity": "MEDIUM",
+      "fixed_version": "39.0.1",
+      "title": "python-cryptography: memory corruption via immutable objects"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "CVE-2024-0727",
+      "severity": "MEDIUM",
+      "fixed_version": "42.0.2",
+      "title": "openssl: denial of service via null dereference"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2019-11358",
+      "severity": "MEDIUM",
+      "fixed_version": "2.1.9, 2.2.2",
+      "title": "jquery: Prototype pollution in object's prototype leading to denial of service, remote code execution, or property injection"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2019-12308",
+      "severity": "MEDIUM",
+      "fixed_version": "1.11.21, 2.1.9, 2.2.2",
+      "title": "django: missing URL validation by AdminURLFieldWidget leads to generation of clickable unsafe JavaScript link causing cross site scripting"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2019-12781",
+      "severity": "MEDIUM",
+      "fixed_version": "2.1.10, 2.2.3, 1.11.22",
+      "title": "Django: Incorrect HTTP detection with reverse-proxy connecting via HTTPS"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2020-13596",
+      "severity": "MEDIUM",
+      "fixed_version": "2.2.13, 3.0.7",
+      "title": "django: possible XSS via admin ForeignKeyRawIdWidget"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2020-24584",
+      "severity": "MEDIUM",
+      "fixed_version": "2.2.16, 3.0.10, 3.1.1",
+      "title": "django: permission escalation in intermediate-level directories of the file system cache on Python 3.7+"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-28658",
+      "severity": "MEDIUM",
+      "fixed_version": "2.2.20, 3.0.14, 3.1.8",
+      "title": "django: potential directory-traversal via uploaded files"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-32052",
+      "severity": "MEDIUM",
+      "fixed_version": "2.2.22, 3.1.10, 3.2.2",
+      "title": "django: header injection possibility since URLValidator accepted newlines in input on Python 3.9.5+"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-3281",
+      "severity": "MEDIUM",
+      "fixed_version": "2.2.18, 3.1.6, 3.0.12",
+      "title": "django: Potential directory-traversal via archive.extract()"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-33203",
+      "severity": "MEDIUM",
+      "fixed_version": "2.2.24, 3.1.12, 3.2.4",
+      "title": "django: Potential directory traversal via ``admindocs``"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-44420",
+      "severity": "MEDIUM",
+      "fixed_version": "2.2.25, 3.1.14, 3.2.10",
+      "title": "django: potential bypass of an upstream access control based on URL paths"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2021-45452",
+      "severity": "MEDIUM",
+      "fixed_version": "2.2.26, 3.2.11, 4.0.1",
+      "title": "django: Potential directory-traversal via Storage.save()"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2022-22818",
+      "severity": "MEDIUM",
+      "fixed_version": "2.2.27, 3.2.12, 4.0.2",
+      "title": "django: Possible XSS via '{% debug %}' template tag"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2024-45231",
+      "severity": "MEDIUM",
+      "fixed_version": "5.1.1, 5.0.9, 4.2.16",
+      "title": "python-django: Potential user email enumeration via response status on password reset"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2025-48432",
+      "severity": "MEDIUM",
+      "fixed_version": "5.2.2, 5.1.10, 4.2.22",
+      "title": "django: Django Path Injection Vulnerability"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2026-53877",
+      "severity": "MEDIUM",
+      "fixed_version": "5.2.16, 6.0.7",
+      "title": "django: Django: Information disclosure via heap buffer over-read in GDALRaster"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2026-53878",
+      "severity": "MEDIUM",
+      "fixed_version": "5.2.16, 6.0.7",
+      "title": "django: Django: HTTP header injection via DomainNameValidator accepting newlines"
+    },
+    {
+      "package": "express",
+      "version": "4.16.0",
+      "cve_id": "CVE-2024-29041",
+      "severity": "MEDIUM",
+      "fixed_version": "4.19.2, 5.0.0-beta.3",
+      "title": "express: cause malformed URLs to be evaluated"
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10.1",
+      "cve_id": "CVE-2020-28493",
+      "severity": "MEDIUM",
+      "fixed_version": "2.11.3",
+      "title": "python-jinja2: ReDoS vulnerability in the urlize filter"
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10.1",
+      "cve_id": "CVE-2024-22195",
+      "severity": "MEDIUM",
+      "fixed_version": "3.1.3",
+      "title": "jinja2: HTML attribute injection when passing user input as keys to xmlattr filter"
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10.1",
+      "cve_id": "CVE-2024-34064",
+      "severity": "MEDIUM",
+      "fixed_version": "3.1.4",
+      "title": "jinja2: accepts keys containing non-attribute characters"
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10.1",
+      "cve_id": "CVE-2024-56326",
+      "severity": "MEDIUM",
+      "fixed_version": "3.1.5",
+      "title": "jinja2: Jinja has a sandbox breakout through indirect reference to format method"
+    },
+    {
+      "package": "jinja2",
+      "version": "2.10.1",
+      "cve_id": "CVE-2025-27516",
+      "severity": "MEDIUM",
+      "fixed_version": "3.1.6",
+      "title": "jinja2: Jinja sandbox breakout through attr filter selecting format method"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2020-28500",
+      "severity": "MEDIUM",
+      "fixed_version": "4.17.21",
+      "title": "nodejs-lodash: ReDoS via the toNumber, trim and trimEnd functions"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2025-13465",
+      "severity": "MEDIUM",
+      "fixed_version": "4.17.23",
+      "title": "lodash: prototype pollution in _.unset and _.omit functions"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2026-2950",
+      "severity": "MEDIUM",
+      "fixed_version": "4.18.0",
+      "title": "lodash: Lodash: Prototype pollution allows deletion of built-in prototype properties via array path bypass"
+    },
+    {
+      "package": "minimist",
+      "version": "1.2.0",
+      "cve_id": "CVE-2020-7598",
+      "severity": "MEDIUM",
+      "fixed_version": "0.2.1, 1.2.3",
+      "title": "nodejs-minimist: prototype pollution allows adding or modifying properties of Object.prototype using a constructor or __proto__ payload"
+    },
+    {
+      "package": "numpy",
+      "version": "1.17.4",
+      "cve_id": "CVE-2021-33430",
+      "severity": "MEDIUM",
+      "fixed_version": "1.21",
+      "title": "numpy: buffer overflow in the PyArray_NewFromDescr_int() in ctors.c"
+    },
+    {
+      "package": "numpy",
+      "version": "1.17.4",
+      "cve_id": "CVE-2021-34141",
+      "severity": "MEDIUM",
+      "fixed_version": "1.22",
+      "title": "numpy: incomplete string comparison in the numpy.core component"
+    },
+    {
+      "package": "numpy",
+      "version": "1.17.4",
+      "cve_id": "CVE-2021-41496",
+      "severity": "MEDIUM",
+      "fixed_version": "1.19",
+      "title": "numpy: buffer overflow in the array_from_pyobj() in fortranobject.c"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2020-35655",
+      "severity": "MEDIUM",
+      "fixed_version": "8.1.0",
+      "title": "python-pillow: Buffer over-read in SGI RLE image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-25292",
+      "severity": "MEDIUM",
+      "fixed_version": "8.1.1",
+      "title": "python-pillow: Regular expression DoS in PDF format parser"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2021-28678",
+      "severity": "MEDIUM",
+      "fixed_version": "8.2.0",
+      "title": "python-pillow: Excessive looping in BLP image reader"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2022-22815",
+      "severity": "MEDIUM",
+      "fixed_version": "9.0.0",
+      "title": "python-pillow: improperly initializes ImagePath.Path in path_getbbox() in path.c"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2022-22816",
+      "severity": "MEDIUM",
+      "fixed_version": "9.0.0",
+      "title": "python-pillow: buffer over-read during initialization of ImagePath.Path in path_getbbox() in path.c"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-42308",
+      "severity": "MEDIUM",
+      "fixed_version": "12.2.0",
+      "title": "Pillow: Pillow: Denial of Service via integer overflow in font processing"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-42310",
+      "severity": "MEDIUM",
+      "fixed_version": "12.2.0",
+      "title": "Pillow: Pillow: Denial of Service via malicious PDF processing"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-55798",
+      "severity": "MEDIUM",
+      "fixed_version": "12.3.0",
+      "title": "python-pillow: Pillow: Arbitrary command injection via shell metacharacters in file paths"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "CVE-2026-59198",
+      "severity": "MEDIUM",
+      "fixed_version": "12.3.0",
+      "title": "Pillow: Pillow: Information disclosure via TGA RLE encoder out-of-bounds read"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "GHSA-jgpv-4h4c-xhw3",
+      "severity": "MEDIUM",
+      "fixed_version": "8.1.2",
+      "title": "Uncontrolled Resource Consumption in pillow"
+    },
+    {
+      "package": "requests",
+      "version": "2.22.0",
+      "cve_id": "CVE-2023-32681",
+      "severity": "MEDIUM",
+      "fixed_version": "2.31.0",
+      "title": "python-requests: Unintended leak of Proxy-Authorization header"
+    },
+    {
+      "package": "requests",
+      "version": "2.22.0",
+      "cve_id": "CVE-2024-35195",
+      "severity": "MEDIUM",
+      "fixed_version": "2.32.0",
+      "title": "requests: subsequent requests to the same host ignore cert verification"
+    },
+    {
+      "package": "requests",
+      "version": "2.22.0",
+      "cve_id": "CVE-2024-47081",
+      "severity": "MEDIUM",
+      "fixed_version": "2.32.4",
+      "title": "requests: Requests vulnerable to .netrc credentials leak via malicious URLs"
+    },
+    {
+      "package": "requests",
+      "version": "2.22.0",
+      "cve_id": "CVE-2026-25645",
+      "severity": "MEDIUM",
+      "fixed_version": "2.33.0",
+      "title": "requests: Requests: Security bypass due to predictable temporary file creation"
+    },
+    {
+      "package": "shelljs",
+      "version": "0.8.3",
+      "cve_id": "GHSA-64g7-mvw6-v9qj",
+      "severity": "MEDIUM",
+      "fixed_version": "0.8.5",
+      "title": "Improper Privilege Management in shelljs"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2024-28863",
+      "severity": "MEDIUM",
+      "fixed_version": "6.2.1",
+      "title": "node-tar: denial of service while parsing a tar file due to lack of folders depth validation"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-53655",
+      "severity": "MEDIUM",
+      "fixed_version": "7.5.16",
+      "title": "node-tar: node-tar: File smuggling due to inconsistent tar archive parsing"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-59871",
+      "severity": "MEDIUM",
+      "fixed_version": "7.5.18",
+      "title": "node-tar: node-tar: Denial of Service due to incorrect PAX path handling"
+    },
+    {
+      "package": "tar",
+      "version": "4.4.8",
+      "cve_id": "CVE-2026-59875",
+      "severity": "MEDIUM",
+      "fixed_version": "7.5.17",
+      "title": "node-tar: node-tar: Denial of Service via crafted archive with NUL bytes in metadata"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2020-26137",
+      "severity": "MEDIUM",
+      "fixed_version": "1.25.9",
+      "title": "python-urllib3: CRLF injection via HTTP request method"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2023-45803",
+      "severity": "MEDIUM",
+      "fixed_version": "2.0.7, 1.26.18",
+      "title": "urllib3: Request body not stripped after redirect from 303 status changes request method to GET"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2024-37891",
+      "severity": "MEDIUM",
+      "fixed_version": "1.26.19, 2.2.2",
+      "title": "urllib3: proxy-authorization request header is not stripped during cross-origin redirects"
+    },
+    {
+      "package": "urllib3",
+      "version": "1.25.3",
+      "cve_id": "CVE-2025-50181",
+      "severity": "MEDIUM",
+      "fixed_version": "2.5.0",
+      "title": "urllib3: urllib3 redirects are not disabled when retries are disabled on PoolManager instantiation"
+    },
+    {
+      "package": "ws",
+      "version": "6.1.0",
+      "cve_id": "CVE-2021-32640",
+      "severity": "MEDIUM",
+      "fixed_version": "7.4.6, 6.2.2, 5.2.3",
+      "title": "nodejs-ws: Specially crafted value of the `Sec-Websocket-Protocol` header can be used to significantly slow down a ws server"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42040",
+      "severity": "LOW",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Incorrect null byte handling can lead to data integrity issues"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "CVE-2026-34073",
+      "severity": "LOW",
+      "fixed_version": "46.0.6",
+      "title": "python-cryptography: Cryptography: Security bypass due to improper DNS name constraint validation"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "GHSA-5cpq-8wj7-hf2v",
+      "severity": "LOW",
+      "fixed_version": "41.0.0",
+      "title": "Vulnerable OpenSSL included in cryptography wheels"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "GHSA-jm77-qphf-c4w8",
+      "severity": "LOW",
+      "fixed_version": "41.0.3",
+      "title": "pyca/cryptography's wheels include vulnerable OpenSSL"
+    },
+    {
+      "package": "cryptography",
+      "version": "2.8",
+      "cve_id": "GHSA-v8gr-m533-ghj9",
+      "severity": "LOW",
+      "fixed_version": "41.0.4",
+      "title": "Vulnerable OpenSSL included in cryptography wheels"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2026-48587",
+      "severity": "LOW",
+      "fixed_version": "5.2.15, 6.0.6",
+      "title": "django: Django: Information disclosure via improper handling of Vary header whitespace"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2026-48588",
+      "severity": "LOW",
+      "fixed_version": "5.2.16, 6.0.7",
+      "title": "django: Django: Information disclosure due to improper caching of Set-Cookie responses"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2026-6873",
+      "severity": "LOW",
+      "fixed_version": "5.2.15, 6.0.6",
+      "title": "python-django: Django: Information disclosure via non-injective cookie salt derivation"
+    },
+    {
+      "package": "django",
+      "version": "2.2.0",
+      "cve_id": "CVE-2026-8404",
+      "severity": "LOW",
+      "fixed_version": "5.2.15, 6.0.6",
+      "title": "Django: Django: Information disclosure due to improper handling of Cache-Control directives"
+    },
+    {
+      "package": "express",
+      "version": "4.16.0",
+      "cve_id": "CVE-2024-43796",
+      "severity": "LOW",
+      "fixed_version": "4.20.0, 5.0.0",
+      "title": "express: Improper Input Handling in Express Redirects"
+    },
+    {
+      "package": "flask",
+      "version": "1.0.2",
+      "cve_id": "CVE-2026-27205",
+      "severity": "LOW",
+      "fixed_version": "3.1.3",
+      "title": "flask: Flask: Information disclosure via improper caching of session data"
+    },
+    {
+      "package": "pillow",
+      "version": "6.2.2",
+      "cve_id": "GHSA-4fx9-vc88-q2xc",
+      "severity": "LOW",
+      "fixed_version": "9.0.0",
+      "title": "Infinite loop in Pillow"
+    },
+    {
+      "package": "vue",
+      "version": "2.6.14",
+      "cve_id": "CVE-2024-9506",
+      "severity": "LOW",
+      "fixed_version": "3.0.0-alpha.0",
+      "title": "vue: Regular Expression Denial of Service (ReDoS)"
+    }
+  ],
+  "outdated": [
+    {
+      "package": "express",
+      "current": "4.16.0",
+      "latest": "5.2.1",
+      "update_type": "major"
+    },
+    {
+      "package": "lodash",
+      "current": "4.17.15",
+      "latest": "4.18.1",
+      "update_type": "minor"
+    },
+    {
+      "package": "axios",
+      "current": "0.19.2",
+      "latest": "1.20.0",
+      "update_type": "major"
+    },
+    {
+      "package": "vue",
+      "current": "2.6.14",
+      "latest": "3.5.43",
+      "update_type": "major"
+    },
+    {
+      "package": "react",
+      "current": "16.13.0",
+      "latest": "19.3.0",
+      "update_type": "major"
+    },
+    {
+      "package": "webpack",
+      "current": "4.41.0",
+      "latest": "5.111.1",
+      "update_type": "major"
+    },
+    {
+      "package": "eslint",
+      "current": "6.5.1",
+      "latest": "10.11.0",
+      "update_type": "major"
+    },
+    {
+      "package": "jest",
+      "current": "24.9.0",
+      "latest": "30.5.2",
+      "update_type": "major"
+    },
+    {
+      "package": "chalk",
+      "current": "2.4.2",
+      "latest": "6.0.0",
+      "update_type": "major"
+    },
+    {
+      "package": "moment",
+      "current": "2.24.0",
+      "latest": "2.31.0",
+      "update_type": "minor"
+    },
+    {
+      "package": "shelljs",
+      "current": "0.8.3",
+      "latest": "0.10.0",
+      "update_type": "minor"
+    },
+    {
+      "package": "minimist",
+      "current": "1.2.0",
+      "latest": "1.2.8",
+      "update_type": "patch"
+    },
+    {
+      "package": "tar",
+      "current": "4.4.8",
+      "latest": "7.5.22",
+      "update_type": "major"
+    },
+    {
+      "package": "ws",
+      "current": "6.1.0",
+      "latest": "8.21.3",
+      "update_type": "major"
+    },
+    {
+      "package": "crypto-js",
+      "current": "3.1.9-1",
+      "latest": "4.2.0",
+      "update_type": "major"
+    },
+    {
+      "package": "django",
+      "current": "2.2.0",
+      "latest": "6.1.1",
+      "update_type": "major"
+    },
+    {
+      "package": "flask",
+      "current": "1.0.2",
+      "latest": "3.1.3",
+      "update_type": "major"
+    },
+    {
+      "package": "requests",
+      "current": "2.22.0",
+      "latest": "2.34.2",
+      "update_type": "minor"
+    },
+    {
+      "package": "urllib3",
+      "current": "1.25.3",
+      "latest": "2.8.0",
+      "update_type": "major"
+    },
+    {
+      "package": "jinja2",
+      "current": "2.10.1",
+      "latest": "3.1.6",
+      "update_type": "major"
+    },
+    {
+      "package": "numpy",
+      "current": "1.17.4",
+      "latest": "2.5.3",
+      "update_type": "major"
+    },
+    {
+      "package": "pandas",
+      "current": "0.25.3",
+      "latest": "3.0.6",
+      "update_type": "major"
+    },
+    {
+      "package": "scipy",
+      "current": "1.3.3",
+      "latest": "1.18.1",
+      "update_type": "minor"
+    },
+    {
+      "package": "boto3",
+      "current": "1.10.48",
+      "latest": "1.43.98",
+      "update_type": "minor"
+    },
+    {
+      "package": "sqlalchemy",
+      "current": "1.3.13",
+      "latest": "2.0.54",
+      "update_type": "major"
+    },
+    {
+      "package": "alembic",
+      "current": "1.4.0",
+      "latest": "1.20.0",
+      "update_type": "minor"
+    },
+    {
+      "package": "celery",
+      "current": "4.4.0",
+      "latest": "5.6.3",
+      "update_type": "major"
+    },
+    {
+      "package": "gunicorn",
+      "current": "19.9.0",
+      "latest": "26.2.0",
+      "update_type": "major"
+    },
+    {
+      "package": "pillow",
+      "current": "6.2.2",
+      "latest": "12.3.0",
+      "update_type": "major"
+    },
+    {
+      "package": "cryptography",
+      "current": "2.8",
+      "latest": "50.0.1",
+      "update_type": "major"
+    }
+  ],
+  "license_issues": [
+    {
+      "package": "tar",
+      "license": null,
+      "category": "unknown",
+      "reason": "License could not be determined, review manually"
+    },
+    {
+      "package": "pillow",
+      "license": null,
+      "category": "unknown",
+      "reason": "License could not be determined, review manually"
+    }
+  ],
+  "warnings": []
+}
