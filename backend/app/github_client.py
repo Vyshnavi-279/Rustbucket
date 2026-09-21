@@ -1,6 +1,8 @@
 import re
-from github import Github, GithubException
+
 from app.config import settings
+from github import Github, GithubException
+
 
 class InvalidRepoURL(Exception): pass
 class RepoNotFound(Exception): pass

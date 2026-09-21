@@ -3,10 +3,10 @@
 **Open Source Dependency Health Platform**
 *Don't let your dependencies rust away.*
 
-[![CI](https://github.com/OWNER/rustbucket/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/rustbucket/actions/workflows/ci.yml)
-[![Build & Push Images](https://github.com/OWNER/rustbucket/actions/workflows/images.yml/badge.svg)](https://github.com/OWNER/rustbucket/actions/workflows/images.yml)
+[![CI](https://github.com/Vyshnavi-279/rustbucket/actions/workflows/ci.yml/badge.svg)](https://github.com/Vyshnavi-279/rustbucket/actions/workflows/ci.yml)
+[![Build & Push Images](https://github.com/Vyshnavi-279/rustbucket/actions/workflows/images.yml/badge.svg)](https://github.com/Vyshnavi-279/rustbucket/actions/workflows/images.yml)
 
-> Replace `OWNER` above with your GitHub username/org once the repo badges are live.
+
 
 ## Overview
 

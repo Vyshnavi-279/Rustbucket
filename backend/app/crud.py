@@ -1,7 +1,8 @@
-from sqlalchemy.orm import Session
-from sqlalchemy import func
 import datetime
-from app.models import Repo, Scan, Finding
+
+from app.models import Finding, Repo, Scan
+from sqlalchemy.orm import Session
+
 
 def get_or_create_repo(db: Session, url: str, owner: str, name: str):
     repo = db.query(Repo).filter(Repo.url == url).first()
@@ -19,14 +20,14 @@ def create_scan(db: Session, repo_id: int):
     db.refresh(scan)
     return scan
 
-def update_scan_status(db: Session, scan_id: int, status: str, error: str = None):
+def update_scan_status(db: Session, scan_id: int, status: str, error: str | None = None):
     scan = db.query(Scan).filter(Scan.id == scan_id).first()
     if scan:
         scan.status = status
         if status == "running":
-            scan.started_at = datetime.datetime.utcnow()
+            scan.started_at = datetime.datetime.now(datetime.timezone.utc)
         elif status in ["done", "failed"]:
-            scan.finished_at = datetime.datetime.utcnow()
+            scan.finished_at = datetime.datetime.now(datetime.timezone.utc)
         if error:
             scan.error = error
         db.commit()
@@ -41,7 +42,7 @@ def save_result(db: Session, scan_id: int, score: int, summary: dict, warnings: 
     scan.summary = summary
     scan.warnings = warnings
     scan.status = "done"
-    scan.finished_at = datetime.datetime.utcnow()
+    scan.finished_at = datetime.datetime.now(datetime.timezone.utc)
 
     # Save individual findings
     for item in findings:

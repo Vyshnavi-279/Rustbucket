@@ -1,9 +1,11 @@
 import time
+
 from app.config import settings
+
 
 class ScanError(Exception): pass
 
-def run_scan(deps: list[dict], project_license: str = None) -> dict:
+def run_scan(deps: list[dict], project_license: str | None = None) -> dict:
     # Check for test failure trigger
     for dep in deps:
         if dep.get("name") == "crash-test":

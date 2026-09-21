@@ -1,7 +1,9 @@
 import datetime
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Text, JSON, Index
-from sqlalchemy.orm import relationship
+
 from app.db import Base
+from sqlalchemy import JSON, Column, DateTime, ForeignKey, Integer, String, Text
+from sqlalchemy.orm import relationship
+
 
 class Repo(Base):
     __tablename__ = "repos"
