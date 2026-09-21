@@ -143,7 +143,42 @@ jobs:
         with:
           context: .
           file: ${{ matrix.dockerfile }}
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository_owner }}/rustbucket-${{ matrix.service }}:${{ github.sha }}
-            ghcr.io/${{ github.repository_owner }}/rustbucket-${{ matrix.service }}:latest
+          push: 
+            push:
+    name: Push to GHCR
+    needs: build-scan
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - service: backend
+            dockerfile: infra/docker/backend.Dockerfile
+          - service: worker
+            dockerfile: infra/docker/worker.Dockerfile
+          - service: frontend
+            dockerfile: infra/docker/frontend.Dockerfile
+    steps:
+      - name: Download image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: rustbucket-${{ matrix.service }}-image
+
+      - name: Load scanned image
+        run: docker load -i rustbucket-${{ matrix.service }}.tar
+
+      - name: Login to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tag and push
+        run: |
+          SRC=rustbucket-${{ matrix.service }}:${{ github.sha }}
+          SHA_TAG=ghcr.io/${{ github.repository_owner }}/rustbucket-${{ matrix.service }}:${{ github.sha }}
+          LATEST_TAG=ghcr.io/${{ github.repository_owner }}/rustbucket-${{ matrix.service }}:latest
+          docker tag "$SRC" "$SHA_TAG"
+          docker tag "$SRC" "$LATEST_TAG"
+          docker push "$SHA_TAG"
+          docker push "$LATEST_TAG"

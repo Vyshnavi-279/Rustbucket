@@ -37,10 +37,9 @@ jobs:
         if: ${{ hashFiles('backend/requirements.txt') != '' }}
         run: pytest backend -m "not network"
 
-  scanner:
+     scanner:
     name: Scanner checks
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -51,19 +50,19 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Install backend dependencies
-        if: ${{ hashFiles('backend/requirements.txt') != '' }}
+      - name: Install scanner dependencies
+        if: ${{ hashFiles('scanner/requirements.txt') != '' }}
         run: |
           python -m pip install --upgrade pip
-          pip install -r backend/requirements.txt
+          pip install -r scanner/requirements.txt
 
-      - name: Scanner syntax check
-        if: ${{ hashFiles('backend/app/scanner_adapter.py') != '' }}
-        run: python -m py_compile backend/app/scanner_adapter.py
+      - name: Ruff
+        if: ${{ hashFiles('scanner/requirements.txt') != '' }}
+        run: ruff check scanner
 
-      - name: Scanner Ruff check
-        if: ${{ hashFiles('backend/app/scanner_adapter.py') != '' }}
-        run: ruff check backend/app/scanner_adapter.py
+      - name: Pytest
+        if: ${{ hashFiles('scanner/requirements.txt') != '' }}
+        run: pytest scanner -m "not network"
 
   frontend:
     name: Frontend checks
