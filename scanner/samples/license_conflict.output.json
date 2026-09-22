@@ -1,0 +1,125 @@
+{
+  "score": 45,
+  "summary": {
+    "total_dependencies": 6,
+    "critical": 0,
+    "high": 3,
+    "medium": 4,
+    "low": 1,
+    "outdated": 6,
+    "license_issues": 1
+  },
+  "vulnerabilities": [
+    {
+      "package": "flask",
+      "version": "1.1.2",
+      "cve_id": "CVE-2023-30861",
+      "severity": "HIGH",
+      "fixed_version": "2.3.2, 2.2.5",
+      "title": "flask: Possible disclosure of permanent session cookie due to missing Vary: Cookie header"
+    },
+    {
+      "package": "gunicorn",
+      "version": "20.0.4",
+      "cve_id": "CVE-2024-1135",
+      "severity": "HIGH",
+      "fixed_version": "22.0.0",
+      "title": "python-gunicorn: HTTP Request Smuggling due to improper validation of Transfer-Encoding headers"
+    },
+    {
+      "package": "gunicorn",
+      "version": "20.0.4",
+      "cve_id": "CVE-2024-6827",
+      "severity": "HIGH",
+      "fixed_version": "22.0.0",
+      "title": "gunicorn: HTTP Request Smuggling in benoitc/gunicorn"
+    },
+    {
+      "package": "requests",
+      "version": "2.24.0",
+      "cve_id": "CVE-2023-32681",
+      "severity": "MEDIUM",
+      "fixed_version": "2.31.0",
+      "title": "python-requests: Unintended leak of Proxy-Authorization header"
+    },
+    {
+      "package": "requests",
+      "version": "2.24.0",
+      "cve_id": "CVE-2024-35195",
+      "severity": "MEDIUM",
+      "fixed_version": "2.32.0",
+      "title": "requests: subsequent requests to the same host ignore cert verification"
+    },
+    {
+      "package": "requests",
+      "version": "2.24.0",
+      "cve_id": "CVE-2024-47081",
+      "severity": "MEDIUM",
+      "fixed_version": "2.32.4",
+      "title": "requests: Requests vulnerable to .netrc credentials leak via malicious URLs"
+    },
+    {
+      "package": "requests",
+      "version": "2.24.0",
+      "cve_id": "CVE-2026-25645",
+      "severity": "MEDIUM",
+      "fixed_version": "2.33.0",
+      "title": "requests: Requests: Security bypass due to predictable temporary file creation"
+    },
+    {
+      "package": "flask",
+      "version": "1.1.2",
+      "cve_id": "CVE-2026-27205",
+      "severity": "LOW",
+      "fixed_version": "3.1.3",
+      "title": "flask: Flask: Information disclosure via improper caching of session data"
+    }
+  ],
+  "outdated": [
+    {
+      "package": "pylint",
+      "current": "2.5.3",
+      "latest": "4.0.8",
+      "update_type": "major"
+    },
+    {
+      "package": "click",
+      "current": "7.1.2",
+      "latest": "8.5.0",
+      "update_type": "major"
+    },
+    {
+      "package": "requests",
+      "current": "2.24.0",
+      "latest": "2.34.2",
+      "update_type": "minor"
+    },
+    {
+      "package": "flask",
+      "current": "1.1.2",
+      "latest": "3.1.3",
+      "update_type": "major"
+    },
+    {
+      "package": "gunicorn",
+      "current": "20.0.4",
+      "latest": "26.2.0",
+      "update_type": "major"
+    },
+    {
+      "package": "python-dateutil",
+      "current": "2.8.1",
+      "latest": "2.9.0.post0",
+      "update_type": "minor"
+    }
+  ],
+  "license_issues": [
+    {
+      "package": "pylint",
+      "license": "GPL-2.0-or-later",
+      "category": "strong_copyleft",
+      "reason": "GPL-2.0-or-later is a strong copyleft license in a permissive (MIT) project"
+    }
+  ],
+  "warnings": []
+}

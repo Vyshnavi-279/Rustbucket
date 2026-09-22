@@ -1,0 +1,82 @@
+# Standalone testing only: fake exporters named backend and worker.
+# Build and load the image first (see the task steps).
+# Remove afterward with: kubectl delete -f observability/dev/k8s-fake.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: rustbucket
+  labels:
+    app: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: rustbucket-fake-exporter:dev
+          imagePullPolicy: IfNotPresent
+          args: ["--mode", "backend", "--port", "8000"]
+          ports:
+            - containerPort: 8000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: rustbucket
+  labels:
+    app: backend
+spec:
+  selector:
+    app: backend
+  ports:
+    - name: http
+      port: 8000
+      targetPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker
+  namespace: rustbucket
+  labels:
+    app: worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: worker
+  template:
+    metadata:
+      labels:
+        app: worker
+    spec:
+      containers:
+        - name: worker
+          image: rustbucket-fake-exporter:dev
+          imagePullPolicy: IfNotPresent
+          args: ["--mode", "worker", "--port", "8001"]
+          ports:
+            - containerPort: 8001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: worker
+  namespace: rustbucket
+  labels:
+    app: worker
+spec:
+  selector:
+    app: worker
+  ports:
+    - name: http
+      port: 8001
+      targetPort: 8001

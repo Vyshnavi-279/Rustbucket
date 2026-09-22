@@ -1,0 +1,328 @@
+{
+  "score": 44,
+  "summary": {
+    "total_dependencies": 5,
+    "critical": 0,
+    "high": 15,
+    "medium": 17,
+    "low": 3,
+    "outdated": 5,
+    "license_issues": 0
+  },
+  "vulnerabilities": [
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2021-3749",
+      "severity": "HIGH",
+      "fixed_version": "0.21.2",
+      "title": "nodejs-axios: Regular expression denial of service in trim function"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2025-27152",
+      "severity": "HIGH",
+      "fixed_version": "1.8.2, 0.30.0",
+      "title": "axios: Possible SSRF and Credential Leakage via Absolute URL in axios Requests"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-25639",
+      "severity": "HIGH",
+      "fixed_version": "1.13.5, 0.30.3",
+      "title": "axios: Axios affected by Denial of Service via __proto__ Key in mergeConfig"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42033",
+      "severity": "HIGH",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: HTTP Transport Hijacking via Prototype Pollution"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42035",
+      "severity": "HIGH",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Arbitrary HTTP header injection via prototype pollution"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42043",
+      "severity": "HIGH",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: NO_PROXY bypass via crafted URL"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44486",
+      "severity": "HIGH",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Information disclosure of proxy credentials via HTTP redirects"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44487",
+      "severity": "HIGH",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Information disclosure of proxy credentials via redirect flows"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44492",
+      "severity": "HIGH",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Proxy bypass via IPv4-mapped IPv6 address non-normalization"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44495",
+      "severity": "HIGH",
+      "fixed_version": "1.15.2, 0.31.1",
+      "title": "axios: Axios: Information disclosure due to prototype pollution vulnerability"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44496",
+      "severity": "HIGH",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Client-side Denial of Service via unescaped regex metacharacters in XSRF cookie name"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2020-8203",
+      "severity": "HIGH",
+      "fixed_version": "4.17.19",
+      "title": "nodejs-lodash: prototype pollution in zipObjectDeep function"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2021-23337",
+      "severity": "HIGH",
+      "fixed_version": "4.17.21",
+      "title": "nodejs-lodash: command injection via template"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2026-4800",
+      "severity": "HIGH",
+      "fixed_version": "4.18.0",
+      "title": "lodash: lodash: Arbitrary code execution via untrusted input in template imports"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "NSWG-ECO-516",
+      "severity": "HIGH",
+      "fixed_version": ">=4.17.19",
+      "title": "Allocation of Resources Without Limits or Throttling"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2020-28168",
+      "severity": "MEDIUM",
+      "fixed_version": "0.21.1",
+      "title": "nodejs-axios: allows an attacker to bypass a proxy by providing a URL that responds with a redirect to a restricted host or IP address"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2023-45857",
+      "severity": "MEDIUM",
+      "fixed_version": "1.6.0, 0.28.0",
+      "title": "axios: exposure of confidential data stored in cookies"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2025-62718",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.0, 0.31.0",
+      "title": "axios: Axios: Server-Side Request Forgery and proxy bypass due to improper hostname normalization"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-40175",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.0, 0.31.0",
+      "title": "axios: Axios: Remote Code Execution via Prototype Pollution escalation"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42034",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Denial of Service via oversized streamed uploads bypassing body limits"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42036",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Denial of Service via unbounded stream consumption when 'responseType: 'stream'' is used"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42038",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Information disclosure due to `no_proxy` bypass"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42039",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Node.js: Axios: Denial of Service via unbounded recursion in toFormData with deeply nested request data"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42041",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Authentication bypass due to prototype pollution of HTTP error handling"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42042",
+      "severity": "MEDIUM",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: XSRF token bypass leading to information disclosure"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-44490",
+      "severity": "MEDIUM",
+      "fixed_version": "1.16.0, 0.32.0",
+      "title": "axios: Axios: Information disclosure and denial of service due to prototype pollution"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-67316",
+      "severity": "MEDIUM",
+      "fixed_version": "1.18.0, 0.33.0",
+      "title": "axios: axios: Prototype Pollution allows unauthorized data transmission and network redirection"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-67319",
+      "severity": "MEDIUM",
+      "fixed_version": "0.33.0, 1.18.0",
+      "title": "axios: axios: Information disclosure and data manipulation via prototype pollution"
+    },
+    {
+      "package": "express",
+      "version": "4.16.0",
+      "cve_id": "CVE-2024-29041",
+      "severity": "MEDIUM",
+      "fixed_version": "4.19.2, 5.0.0-beta.3",
+      "title": "express: cause malformed URLs to be evaluated"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2020-28500",
+      "severity": "MEDIUM",
+      "fixed_version": "4.17.21",
+      "title": "nodejs-lodash: ReDoS via the toNumber, trim and trimEnd functions"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2025-13465",
+      "severity": "MEDIUM",
+      "fixed_version": "4.17.23",
+      "title": "lodash: prototype pollution in _.unset and _.omit functions"
+    },
+    {
+      "package": "lodash",
+      "version": "4.17.15",
+      "cve_id": "CVE-2026-2950",
+      "severity": "MEDIUM",
+      "fixed_version": "4.18.0",
+      "title": "lodash: Lodash: Prototype pollution allows deletion of built-in prototype properties via array path bypass"
+    },
+    {
+      "package": "axios",
+      "version": "0.19.2",
+      "cve_id": "CVE-2026-42040",
+      "severity": "LOW",
+      "fixed_version": "1.15.1, 0.31.1",
+      "title": "axios: Axios: Incorrect null byte handling can lead to data integrity issues"
+    },
+    {
+      "package": "express",
+      "version": "4.16.0",
+      "cve_id": "CVE-2024-43796",
+      "severity": "LOW",
+      "fixed_version": "4.20.0, 5.0.0",
+      "title": "express: Improper Input Handling in Express Redirects"
+    },
+    {
+      "package": "vue",
+      "version": "2.6.14",
+      "cve_id": "CVE-2024-9506",
+      "severity": "LOW",
+      "fixed_version": "3.0.0-alpha.0",
+      "title": "vue: Regular Expression Denial of Service (ReDoS)"
+    }
+  ],
+  "outdated": [
+    {
+      "package": "express",
+      "current": "4.16.0",
+      "latest": "5.2.1",
+      "update_type": "major"
+    },
+    {
+      "package": "lodash",
+      "current": "4.17.15",
+      "latest": "4.18.1",
+      "update_type": "minor"
+    },
+    {
+      "package": "vue",
+      "current": "2.6.14",
+      "latest": "3.5.43",
+      "update_type": "major"
+    },
+    {
+      "package": "axios",
+      "current": "0.19.2",
+      "latest": "1.20.0",
+      "update_type": "major"
+    },
+    {
+      "package": "chalk",
+      "current": "2.4.2",
+      "latest": "6.0.0",
+      "update_type": "major"
+    }
+  ],
+  "license_issues": [],
+  "warnings": []
+}

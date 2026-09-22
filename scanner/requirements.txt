@@ -1,2 +1,8 @@
 requests
 packaging
+<<<<<<< HEAD
+=======
+pytest
+requests-mock
+ruff
+>>>>>>> 42fc4bf2752a577551eec1a3b323b9e8af369ac5

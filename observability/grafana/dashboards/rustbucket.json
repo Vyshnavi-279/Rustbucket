@@ -1,93 +1,83 @@
 {
-  "uid": "rustbucket-overview",
-  "title": "Rustbucket Overview",
-  "tags": ["rustbucket"],
-  "timezone": "browser",
-  "schemaVersion": 39,
-  "version": 1,
+  "annotations": { "list": [] },
   "editable": true,
-  "refresh": "5s",
-  "time": { "from": "now-15m", "to": "now" },
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
   "panels": [
     {
-      "id": 1,
+      "title": "Total Scans Started vs Completed",
       "type": "stat",
-      "title": "API error rate (5xx)",
-      "gridPos": { "h": 5, "w": 6, "x": 0, "y": 0 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "h": 6, "w": 8, "x": 0, "y": 0 },
       "targets": [
         {
-          "refId": "A",
-          "expr": "sum(rate(http_requests_total{status=~\"5..\"}[5m])) / sum(rate(http_requests_total[5m]))"
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "sum(rustbucket_scans_started_total)",
+          "legendFormat": "Started",
+          "refId": "A"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "sum(rustbucket_scans_completed_total)",
+          "legendFormat": "Completed",
+          "refId": "B"
+        }
+      ],
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "reduceOptions": {
+          "calcs": ["lastNotNull"],
+          "fields": "",
+          "values": false
+        }
+      }
+    },
+    {
+      "title": "Scan Failure Rate (%)",
+      "type": "stat",
+      "gridPos": { "h": 6, "w": 8, "x": 8, "y": 0 },
+      "targets": [
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "(sum(rate(rustbucket_scans_failed_total[5m])) / sum(rate(rustbucket_scans_started_total[5m]))) * 100",
+          "legendFormat": "Failure Rate",
+          "refId": "A"
         }
       ],
       "fieldConfig": {
         "defaults": {
-          "unit": "percentunit",
-          "decimals": 1,
+          "unit": "percent",
           "thresholds": {
             "mode": "absolute",
             "steps": [
               { "color": "green", "value": null },
-              { "color": "red", "value": 0.05 }
+              { "color": "yellow", "value": 1 },
+              { "color": "red", "value": 5 }
             ]
           }
-        },
-        "overrides": []
-      },
-      "options": { "colorMode": "background", "graphMode": "none", "reduceOptions": { "calcs": ["lastNotNull"] } }
+        }
+      }
     },
     {
-      "id": 2,
+      "title": "Active Worker Instances",
       "type": "stat",
-      "title": "Scan success ratio",
-      "gridPos": { "h": 5, "w": 6, "x": 6, "y": 0 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "h": 6, "w": 8, "x": 16, "y": 0 },
       "targets": [
         {
-          "refId": "A",
-          "expr": "sum(rate(rustbucket_scans_completed_total[5m])) / sum(rate(rustbucket_scans_started_total[5m]))"
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "count(up{job=\"worker\"} == 1) or count(up{instance=~\".*8001\"} == 1)",
+          "legendFormat": "Active Workers",
+          "refId": "A"
         }
       ],
       "fieldConfig": {
         "defaults": {
-          "unit": "percentunit",
-          "decimals": 0,
-          "min": 0,
-          "max": 1,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              { "color": "red", "value": null },
-              { "color": "yellow", "value": 0.8 },
-              { "color": "green", "value": 0.95 }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": { "colorMode": "background", "graphMode": "none", "reduceOptions": { "calcs": ["lastNotNull"] } }
-    },
-    {
-      "id": 3,
-      "type": "stat",
-      "title": "Targets up",
-      "gridPos": { "h": 5, "w": 6, "x": 12, "y": 0 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
-      "targets": [
-        { "refId": "A", "expr": "up", "legendFormat": "{{job}}" }
-      ],
-      "fieldConfig": {
-        "defaults": {
-          "mappings": [
-            {
-              "type": "value",
-              "options": {
-                "0": { "text": "DOWN", "color": "red" },
-                "1": { "text": "UP", "color": "green" }
-              }
-            }
-          ],
+          "unit": "none",
+          "color": { "mode": "thresholds" },
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -95,133 +85,96 @@
               { "color": "green", "value": 1 }
             ]
           }
-        },
-        "overrides": []
-      },
-      "options": { "colorMode": "background", "graphMode": "none", "textMode": "value_and_name", "reduceOptions": { "calcs": ["lastNotNull"] } }
+        }
+      }
     },
     {
-      "id": 4,
-      "type": "gauge",
-      "title": "Queue length (now)",
-      "gridPos": { "h": 5, "w": 6, "x": 18, "y": 0 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "title": "Scan Throughput (Scans / sec)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
       "targets": [
-        { "refId": "A", "expr": "rustbucket_queue_length" }
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "sum(rate(rustbucket_scans_started_total[5m]))",
+          "legendFormat": "Started /s",
+          "refId": "A"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "sum(rate(rustbucket_scans_completed_total[5m]))",
+          "legendFormat": "Completed /s",
+          "refId": "B"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "sum(rate(rustbucket_scans_failed_total[5m]))",
+          "legendFormat": "Failed /s",
+          "refId": "C"
+        }
       ],
       "fieldConfig": {
         "defaults": {
-          "unit": "short",
-          "min": 0,
-          "max": 20,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              { "color": "green", "value": null },
-              { "color": "yellow", "value": 8 },
-              { "color": "red", "value": 14 }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "options": { "showThresholdMarkers": true, "reduceOptions": { "calcs": ["lastNotNull"] } }
+          "custom": { "drawStyle": "line", "lineInterpolation": "smooth" },
+          "unit": "ops"
+        }
+      }
     },
     {
-      "id": 5,
+      "title": "Scan Duration Latency Quantiles (p50, p90, p99)",
       "type": "timeseries",
-      "title": "API request rate by endpoint",
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 5 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
       "targets": [
         {
-          "refId": "A",
-          "expr": "sum(rate(http_requests_total[1m])) by (handler)",
-          "legendFormat": "{{handler}}"
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "histogram_quantile(0.50, sum(rate(rustbucket_scan_duration_seconds_bucket[5m])) by (le))",
+          "legendFormat": "p50 (Median)",
+          "refId": "A"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "histogram_quantile(0.90, sum(rate(rustbucket_scan_duration_seconds_bucket[5m])) by (le))",
+          "legendFormat": "p90",
+          "refId": "B"
+        },
+        {
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "histogram_quantile(0.99, sum(rate(rustbucket_scan_duration_seconds_bucket[5m])) by (le))",
+          "legendFormat": "p99",
+          "refId": "C"
         }
       ],
-      "fieldConfig": { "defaults": { "unit": "reqps" }, "overrides": [] },
-      "options": { "legend": { "displayMode": "list", "placement": "bottom" } }
+      "fieldConfig": {
+        "defaults": {
+          "custom": { "drawStyle": "line", "lineInterpolation": "smooth" },
+          "unit": "s"
+        }
+      }
     },
     {
-      "id": 6,
-      "type": "timeseries",
-      "title": "API latency p50 / p95",
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 5 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "title": "Scan Duration Histogram Distribution",
+      "type": "histogram",
+      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 14 },
       "targets": [
         {
-          "refId": "A",
-          "expr": "histogram_quantile(0.50, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))",
-          "legendFormat": "p50"
-        },
-        {
-          "refId": "B",
-          "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le))",
-          "legendFormat": "p95"
+          "datasource": { "type": "prometheus", "uid": "Prometheus" },
+          "expr": "sum(increase(rustbucket_scan_duration_seconds_bucket[5m])) by (le)",
+          "format": "heatmap",
+          "legendFormat": "{{le}}",
+          "refId": "A"
         }
       ],
-      "fieldConfig": { "defaults": { "unit": "s" }, "overrides": [] },
-      "options": { "legend": { "displayMode": "list", "placement": "bottom" } }
-    },
-    {
-      "id": 7,
-      "type": "timeseries",
-      "title": "Scans started / completed / failed per minute",
-      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 13 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "rate(rustbucket_scans_started_total[5m]) * 60",
-          "legendFormat": "started"
-        },
-        {
-          "refId": "B",
-          "expr": "rate(rustbucket_scans_completed_total[5m]) * 60",
-          "legendFormat": "completed"
-        },
-        {
-          "refId": "C",
-          "expr": "rate(rustbucket_scans_failed_total[5m]) * 60",
-          "legendFormat": "failed"
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
         }
-      ],
-      "fieldConfig": { "defaults": { "unit": "short" }, "overrides": [] },
-      "options": { "legend": { "displayMode": "list", "placement": "bottom" } }
-    },
-    {
-      "id": 8,
-      "type": "timeseries",
-      "title": "Scan duration p50 / p95",
-      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 13 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
-      "targets": [
-        {
-          "refId": "A",
-          "expr": "histogram_quantile(0.50, sum(rate(rustbucket_scan_duration_seconds_bucket[10m])) by (le))",
-          "legendFormat": "p50"
-        },
-        {
-          "refId": "B",
-          "expr": "histogram_quantile(0.95, sum(rate(rustbucket_scan_duration_seconds_bucket[10m])) by (le))",
-          "legendFormat": "p95"
-        }
-      ],
-      "fieldConfig": { "defaults": { "unit": "s" }, "overrides": [] },
-      "options": { "legend": { "displayMode": "list", "placement": "bottom" } }
-    },
-    {
-      "id": 9,
-      "type": "timeseries",
-      "title": "Queue length over time",
-      "gridPos": { "h": 8, "w": 24, "x": 0, "y": 21 },
-      "datasource": { "type": "prometheus", "uid": "prometheus" },
-      "targets": [
-        { "refId": "A", "expr": "rustbucket_queue_length", "legendFormat": "jobs waiting" }
-      ],
-      "fieldConfig": { "defaults": { "unit": "short", "min": 0 }, "overrides": [] },
-      "options": { "legend": { "displayMode": "list", "placement": "bottom" } }
+      }
     }
-  ]
+  ],
+  "refresh": "5s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["rustbucket", "observability", "metrics"],
+  "time": { "from": "now-15m", "to": "now" },
+  "title": "Rustbucket Telemetry & Diagnostics",
+  "uid": "rustbucket-telemetry-dashboard"
 }
