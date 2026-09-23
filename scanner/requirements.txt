@@ -1,2 +1,5 @@
-requests
+﻿requests
 packaging
+pytest
+requests-mock
+ruff
